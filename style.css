@@ -194,7 +194,7 @@ h1.logotype {
 /* ---------------------- Code related to the explanation *---------------------- */
 #explanationcontent {
     width: 960px;
-    height: 700px;
+    height: 800px;
     float: left;
     margin-left: 90px;
     margin-top:50px;
@@ -208,11 +208,11 @@ h1.logotype {
     align-items: center;
 }
 #explanationbox{
-    width: 300px;
+    width: 250px;
     height: 300px;
     float: left;
-    margin-left: 15px;
     margin-bottom: 15px;
+    margin-left: 52.5px;
     border-radius: 5px;
 }
 
