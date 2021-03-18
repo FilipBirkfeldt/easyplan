@@ -444,11 +444,15 @@ p.explanation{
   /* Modal Content */
   .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background: hsla(29, 92%, 70%, 1);
+    background: linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F9B16E", endColorstr="#F68080", GradientType=1 );
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 44.53125%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -469,7 +473,7 @@ p.explanation{
   
   /* The Close Button */
   .close {
-    color: white;
+    color:#EBEBEB;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -477,24 +481,13 @@ p.explanation{
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: #DADADA;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  .modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
   }
   
   .modal-body {
       padding: 2px 16px;
       text-align:center;
     }
-  
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
+
