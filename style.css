@@ -13,7 +13,7 @@ body {
     display: inline;
     float: left;
     position:fixed;
-    background-color: #3f3131;
+    background-color: #EBEBEB;
     border-bottom: 1px solid #202020;
     top:0px;
 }
@@ -40,6 +40,7 @@ body {
     border: none;
     outline: none;
 }
+
 
 /* ---------------------- Code related to the logotype *---------------------- */
 #colorcontainer {
@@ -321,7 +322,10 @@ color: #202020
     transition-property: all;
     transition-timing-function: ease;
     transition-delay: 0s;
+    border: none;
+    outline: none;
   }
+
   
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -361,6 +365,8 @@ color: #202020
   .dropdown:hover .dropdown-content {
     display: block;
     animation: fade-in 0.25s;
+    border: none;
+    outline: none;
     }
 
     @keyframes fade-in {
