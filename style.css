@@ -254,7 +254,7 @@ a:link, a:visited, a:hover, a:active {
     border-right: 1px solid #B8B8B8;
 }
 
-#button_text{
+#myBtn {
     width:235px;
     height:75px;
     float: left;
@@ -264,8 +264,10 @@ a:link, a:visited, a:hover, a:active {
     background-color: #EBEBEB;
     border-radius:0px 5px 5px 0px;
     transition-duration:0.08s;
-}
-#button_text:hover{
+    border: none;
+  }
+
+  #myBtn:hover{
     width:235px;
     height:75px;
     float: left;
@@ -275,6 +277,20 @@ a:link, a:visited, a:hover, a:active {
     background-color: #E3E3E3;
     border-radius:0px 5px 5px 0px;
     transition-duration:0.08s;
+    border: none;
+}
+
+#myBtn:active{
+    width:235px;
+    height:75px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E3E3;
+    border-radius:0px 5px 5px 0px;
+    transition-duration:0.08s;
+    border: none;
 }
 
 h2.button{
@@ -480,29 +496,3 @@ p.explanation{
     background-color: #5cb85c;
     color: white;
   }
-
-  #myBtn {
-    width:235px;
-    height:75px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #EBEBEB;
-    border-radius:0px 5px 5px 0px;
-    transition-duration:0.08s;
-    border: none;
-  }
-
-  #myBtn:hover{
-    width:235px;
-    height:75px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #E3E3E3;
-    border-radius:0px 5px 5px 0px;
-    transition-duration:0.08s;
-    border: none;
-}
