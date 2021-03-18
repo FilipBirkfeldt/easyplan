@@ -1,0 +1,351 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color:#EBEBEB;
+    margin: 0;
+}
+
+
+/* ---------------------- Code related to the header *---------------------- */
+#header {
+    width: 100%;
+    height: 64px;
+    display: inline;
+    float: left;
+    position:fixed;
+    background-color: #EBEBEB;
+    border-bottom: 1px solid #202020;
+    top:0px;
+}
+
+#headcontainer {
+    width: 1140px;
+    height: 64px;
+    margin: 0px auto;
+}
+#logotypecontainer {
+    width:520px;
+    height:64px;
+    float: left;
+    position: fixed;
+}
+
+#menucontainer {
+    width:615px;
+    height:39px;
+    float: right;
+    padding-top: 25px;
+    text-align:right;
+    padding-right: 5px;
+}
+
+/* ---------------------- Code related to the logotype *---------------------- */
+#colorcontainer {
+    width:64px;
+    height:48px;
+    float: left;
+}
+/* ----- row 1 -----*/
+.square1_1{
+    height:16px;
+    width:16px;
+    background-color: #F57E4A;
+    float: left;
+    margin-top:8px;
+}
+
+.square1_2{
+    height:16px;
+    width:16px;
+    background-color: #F68938;
+    float: left;
+    margin-top:8px;
+}
+
+.square1_3{
+    height:16px;
+    width:16px;
+    background-color: #F69426;
+    float: left;
+    margin-top:8px;
+}
+
+.square1_4{
+    height:16px;
+    width:16px;
+    background-color: #F79E14;
+    float: left;
+    margin-top:8px;
+}
+
+
+/* ----- row 2 -----*/
+.square2_1{
+    height:16px;
+    width:16px;
+    background-color: #BCDC26;
+    float: left;
+
+}
+
+.square2_2{
+    height:16px;
+    width:16px;
+    background-color: #A2D638;
+    float: left;
+}
+
+.square2_3{
+    height:16px;
+    width:16px;
+    background-color: #87CF4A;
+    float: left;
+}
+
+.square2_4{
+    height:16px;
+    width:16px;
+    background-color: #6CC95D;
+    float: left;
+
+}
+
+/* ----- row 3 -----*/
+.square3_1{
+    height:16px;
+    width:16px;
+    background-color: #9983FF;
+    float: left;
+}
+
+.square3_2{
+    height:16px;
+    width:16px;
+    background-color: #B18DFF;
+    float: left;
+}
+
+.square3_3{
+    height:16px;
+    width:16px;
+    background-color: #C897FF;
+    float: left;
+}
+
+.square3_4{
+    height:16px;
+    width:16px;
+    background-color: #E0A2FF;
+    float: left;
+}
+
+#logotext {
+    width: 476 px;
+    height: 64px;
+    float: left;
+    margin-top: -12px;
+    margin-left:10px;
+}
+.h1.logotype {
+    font-size: 26px;
+    text-align: center;
+    color: #202020;
+    letter-spacing:1px;
+}
+
+
+/* ---------------------- Code related to the first box *---------------------- */
+
+#container {
+    max-width:1140px;
+    height:2000px;
+    margin: 0px auto;
+    margin-top:64px;
+}
+
+#textbox {
+    width: 100%;
+    height: 100px;
+    float: left;
+    text-align:center;
+    margin-top:100px;
+    
+}
+
+#buttonbox {
+    width: 960px;
+    height: 200px;
+    float: left;
+    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6CC95D; 
+    border-radius:5px;
+    
+}
+
+/* ---------------------- Code related to hrefs *---------------------- */
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #202020;
+  }
+
+
+/* ---------------------- Code related to buttons *---------------------- */
+#buttonholder{
+    width: 300px;
+    height:75px;
+}
+
+
+#button_icon{
+    width:64px;
+    height:75px;
+    float: left;
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:5px 0px 0px 5px;
+    transition-duration:0.08s;
+    border-right: 1px solid #B8B8B8;
+}
+#button_icon:hover{
+    width:64px;
+    height:75px;
+    float: left;
+    background-color: #DADADA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:5px 0px 0px 5px;
+    transition-duration:0.08s;
+    border-right: 1px solid #B8B8B8;
+}
+
+#button_text{
+    width:235px;
+    height:75px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEBEB;
+    border-radius:0px 5px 5px 0px;
+    transition-duration:0.08s;
+}
+#button_text:hover{
+    width:235px;
+    height:75px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E3E3;
+    border-radius:0px 5px 5px 0px;
+    transition-duration:0.08s;
+}
+
+h2.button{
+font-weight: 200;
+font-size: 25px;
+text-align: center;
+color: #202020
+}
+
+/* ---------------------- Code related to the menu *---------------------- */
+
+/* Dropdown Button */
+ .dropbtn {
+    font-size: 16px;
+    border: none;
+}  
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #EBEBEB;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #202020;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #DADADA;
+      transition-duration: 1s;
+      transition-property: all;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+    }
+  
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    animation: fade-in 1s;
+    }
+
+    @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fade-out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+
+/* ---------------------- Code related to the about page *---------------------- */
+
+
+#aboutbox {
+    width: 320px;
+    height: 400px;
+    margin-left:45px;
+    margin-bottom:10px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #DADADA; 
+
+    border-radius:5px;
+}
+
