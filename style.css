@@ -470,10 +470,39 @@ p.explanation{
     color: white;
   }
   
-  .modal-body {padding: 2px 16px;}
+  .modal-body {
+      padding: 2px 16px;
+      text-align:center;
+    }
   
   .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
   }
+
+  #myBtn {
+    width:235px;
+    height:75px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEBEB;
+    border-radius:0px 5px 5px 0px;
+    transition-duration:0.08s;
+    border: none;
+  }
+
+  #myBtn:hover{
+    width:235px;
+    height:75px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E3E3;
+    border-radius:0px 5px 5px 0px;
+    transition-duration:0.08s;
+    border: none;
+}
