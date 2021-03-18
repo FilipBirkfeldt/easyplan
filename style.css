@@ -1,9 +1,9 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
     background-color:#EBEBEB;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
+
 
 
 /* ---------------------- Code related to the header *---------------------- */
@@ -146,10 +146,11 @@ body {
     margin-top: -12px;
     margin-left:10px;
 }
-.h1.logotype {
-    font-size: 26px;
+h1.logotype {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
     text-align: center;
-    color: #202020;
+    color: blue;
     letter-spacing:1px;
 }
 
@@ -174,16 +175,45 @@ body {
 
 #buttonbox {
     width: 960px;
-    height: 200px;
+    height: 500px;
     float: left;
     margin-left: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6CC95D; 
+    background: hsla(29, 92%, 70%, 1);
+    background: linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F9B16E", endColorstr="#F68080", GradientType=1 );
     border-radius:5px;
-    
 }
+
+/* ---------------------- Code related to the explanation *---------------------- */
+#explanationcontent {
+    width: 960px;
+    height: 700px;
+    float: left;
+    margin-left: 90px;
+    margin-top:50px;
+}
+#explanationtext{
+    width: 960px;
+    height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#explanationbox{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
 
 /* ---------------------- Code related to hrefs *---------------------- */
 
@@ -267,7 +297,7 @@ color: #202020
   .dropdown {
     position: relative;
     display: inline-block;
-    transition-duration: 1s;
+    transition-duration: 0.25s;
     transition-property: all;
     transition-timing-function: ease;
     transition-delay: 0s;
@@ -282,7 +312,7 @@ color: #202020
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
     z-index: 1;
-    transition-duration: 1s;
+    transition-duration: 0.25s;
     transition-property: all;
     transition-timing-function: ease;
     transition-delay: 0s;
@@ -310,7 +340,7 @@ color: #202020
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
-    animation: fade-in 1s;
+    animation: fade-in 0.25s;
     }
 
     @keyframes fade-in {
@@ -345,7 +375,24 @@ color: #202020
     justify-content: center;
     align-items: flex-start;
     background-color: #DADADA; 
-
     border-radius:5px;
 }
+
+
+
+/* ---------------------- Code related to text and fonts *---------------------- */
+
+h3.explanation{
+    size:40px;
+    text-align: center;
+    margin-top:50px;
+    color:#202020;
+
+}
+p.explanation{
+    size: 10px;
+    text-align:center;
+}
+
+
 
