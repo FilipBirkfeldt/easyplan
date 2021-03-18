@@ -259,12 +259,14 @@ a:link, a:visited, a:hover, a:active {
     height:75px;
     float: left;
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     background-color: #EBEBEB;
     border-radius:0px 5px 5px 0px;
     transition-duration:0.08s;
     border: none;
+    outline: none;
   }
 
   #myBtn:hover{
