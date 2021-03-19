@@ -35,7 +35,7 @@ def __getPoints_specialization(dfPerson, speci)-> float:
     return dfPerson[dfPerson.Typ == speci]['Poäng'].sum()
 
 
-def getAllPointsDict(progam, specialisering, course_list) -> dict:
+def __getAllPointsDict(progam, specialisering, course_list) -> dict:
     "Returns a dictionary for the specific person, allP, A-P, spec-P"
     courses_df = readInData()
     course_list = courses_df.Kurskod.values
@@ -53,7 +53,7 @@ def getAllPointsDict(progam, specialisering, course_list) -> dict:
     }
     return personDict
 
-def addPointsLeft_toDict(personDict) -> dict: 
+def __addPointsLeft_toDict(personDict) -> dict: 
     "Adds points left to graduation"
     aPoints_req = 45
     totalPoints_req = 300
@@ -76,8 +76,8 @@ def addPointsLeft_toDict(personDict) -> dict:
 
 def presentPerson(): 
     "Bara för att visa er var vi är so far"
-    personDict = getAllPointsDict('M', 'Mekatronik', ['kommer va chill när den här fungerar'])
-    personDict = addPointsLeft_toDict(personDict)
+    personDict = __getAllPointsDict('M', 'Mekatronik', ['kommer va chill när den här fungerar'])
+    personDict = __addPointsLeft_toDict(personDict)
     print()
     for key in personDict.keys(): 
         if 'left' in key: 
