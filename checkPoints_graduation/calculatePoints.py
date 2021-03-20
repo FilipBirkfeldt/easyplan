@@ -84,4 +84,11 @@ def presentPerson():
             continue
         print('\n', key, ' - ', personDict.get(key), '  left: ', personDict.get(key+'_left'))
 
-presentPerson()
+#presentPerson()
+
+def testSidde(word:str, ord:int) ->str:
+    return str(word)+' world ' + str(ord)
+
+string =  testSidde(7, 5)
+
+print(string)
