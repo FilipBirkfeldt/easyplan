@@ -85,3 +85,27 @@ def presentPerson():
         print('\n', key, ' - ', personDict.get(key), '  left: ', personDict.get(key+'_left'))
 
 presentPerson()
+
+# TODO: 
+def addCourses(listCourse:list, df:pd.DataFrame())->pd.DataFrame(): 
+    #TODO
+    """takes in a list of courses from the user and ads it to the specific study-Plan"""
+    return 
+
+# TODO :
+def lp_periods(df : pd.DataFrame())->pd.DataFrame(): 
+    """Fetches the columns named lp1, lp2 etc to a single column"""
+    #nuvarande kolumner, lp1, lp2,lp3,lp4 
+    return
+
+#TODO : 
+def readDataFromURL(): 
+    """Reads in data directly from a URL"""
+    return 
+
+# TODO: 
+def concatData(): 
+    """concatenates all the data to a single dataframe """
+    return 
+    
+
