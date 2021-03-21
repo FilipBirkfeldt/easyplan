@@ -12,17 +12,36 @@ easyplan - stop struggle | Home
         </p>
     </div>
 
-    <div id="buttonbox">
-        <div id="buttonholder">
-            <div id="button_icon">
-                <p class="content"><i class="far fa-lightbulb fa-2x"></i></p>
-            </div>
-    
-             <button id="myBtn">
-                <a href="#"><h2 class="button">Mage magic happen</h2></a>
-            </button>
+
+<div id="contentbox">
+    <div id="wrapper_left">
+        <div id="title_left">
+            <h3 class="leftcont">Kurskoder</h3>
+            <p class="leftcont">Ange kurskoder för de kurser du har avklarat.</p>
         </div>
+        <div id="content_left">
+        <form method="post" action="">
+            <div id="formwrapper">
+                <div id="inputrow">
+                    <div class="textfieldwrapper">
+                        <input type="text" name="title[]" class="textfield" placeholder="Kurskod" autocomplete="off">
+                    </div>
+                    <div class="removebtnwrapper">                
+                        <button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+        
+                <div id="newRow"></div>
+                <div id="submitaddwrapper">
+                    <button id="addRow" type="button" class="addbtn"><i class="far fa-plus-square"></i></button>
+                    <button type="submit" class="submitbtn" name="foo" value="bar"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+     </div>
     </div>
+</div>
+
 
     <div id="explanationcontent">
         <div id="explanationtext">
