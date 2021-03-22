@@ -1,10 +1,9 @@
 from flaskr import app
 from flask import render_template, url_for
-from flaskr.forms import courseList
+from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
-    courses = {'Course1' : '', 'Course2' : ''}
-    form = courseList(courses = courses)
+    form = courseField()
   
     return render_template("index.html", form = form)
 
