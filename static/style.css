@@ -506,8 +506,8 @@ p.leftcont{
     color:#202020;
 }
 
+/* ---------------------- Code related to scrollbar *---------------------- */
 
-/* width */
 ::-webkit-scrollbar {
     width: 5px;
   }
