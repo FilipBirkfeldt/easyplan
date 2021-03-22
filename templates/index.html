@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+easyplan - stop struggle | Home
+{% endblock %}
+
+{% block content %}
+<div id="container">
+    <div id="textbox">
+        <h2 class="textboxtitle">Stop struggle!</h2>
+        <p class="explanation">Plan your courses and make sure your personal study plan adds up, with ease.
+        </p>
+    </div>
+
+
+<div id="contentbox">
+    <div id="wrapper_left">
+        <div id="title_left">
+            <h3 class="leftcont">Kurskoder</h3>
+            <p class="leftcont">Ange kurskoder för de kurser du har avklarat.</p>
+        </div>
+        <div id="content_left">
+        <form method="post" action="">
+            <div id="formwrapper">
+                <div id="inputrow">
+                    <div class="textfieldwrapper">
+                        <input type="text" name="title[]" class="textfield" placeholder="Kurskod" autocomplete="off">
+                    </div>
+                    <div class="removebtnwrapper">                
+                        <button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+        
+                <div id="newRow"></div>
+                <div id="submitaddwrapper">
+                    <button id="addRow" type="button" class="addbtn"><i class="far fa-plus-square"></i></button>
+                    <button type="submit" class="submitbtn" name="foo" value="bar"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+     </div>
+    </div>
+</div>
+
+
+    <div id="explanationcontent">
+        <div id="explanationtext">
+        <h3 class="explanation">Here's how it works!</p>
+         </div>
+
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-pencil-alt fa-2x"></i></h3>
+            <h3 class="explanation">Fyll i kurslistan<br></h3>
+            <p class="explanation">Sök efter kurskoder och fyll i vilka kurser du har avklarat.</p>
+        </div>
+
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-check-square fa-2x"></i></h3>
+            <h3 class="explanation">Klicka i specialisering<br></h3>
+            <p class="explanation">Genom att klicka i din specialisering kan easyplan ta reda på
+                hur långt du är kommen i din utbildning och ge förslag på kurser att läsa.
+            </p>
+        </div>
+
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-hat-wizard fa-2x"></i></h3>
+            <h3 class="explanation">Låt easyplan göra sin magi<br></h3>
+            <p class="explanation">Klicka på kör eller knäpp ett enkelt slag på enter, easyplan kör igång
+                och räknar ut intressant data.
+            </p>
+        </div>
+
+        
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-chart-line fa-2x"></i></h3>
+            <h3 class="explanation">Grafisk illustration<br></h3>
+            <p class="explanation">Njut av förklarande diagram där du kan se vad du har kvar, 
+                hur långt du har kommit och vad du kan göra för att nå målet!</p>
+        </div>
+
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-share fa-2x"></i></h3>
+            <h3 class="explanation">Exportera eller dela<br></h3>
+            <p class="explanation">Exportera din data i en excelfil eller dela enkelt på sociala medier, mail eller messenger</p>
+        </div>
+
+        <div id="explanationbox">
+            <h3 class="explanation"><i class="fas fa-user-graduate fa-2x"></i></h3>
+            <h3 class="explanation">Examen<br></h3>
+            <p class="explanation">Genom att hela tiden hålla koll på din framgång blir det lätt att ta examen, se till att klara tentorna!</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
