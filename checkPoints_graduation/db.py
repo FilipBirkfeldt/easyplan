@@ -2,6 +2,7 @@ userName = 'easyPlanAdmin'
 passWord = 'easyPlan1231!'
 url_endPoint = 'dbeasyplan.c9odibtfqcnp.us-east-2.rds.amazonaws.com'
 db_name = 'KURSER_M'
+table_name = 'Courses_M'
 
 import mysql.connector
 
@@ -12,10 +13,14 @@ connection = mysql.connector.connect(
     db = db_name,
 ) # i framtiden db-proxy för detta. Stressful att anropa lambda i AWS varje gång
 
-def lambda_handler(event, contrext): 
+def handler(): 
     cursor = connection.cursor()
-    cursor.execute('SELECT * from Kurser_M')
+    cursor.execute('SELECT * from '+table_name)
     rows = cursor.fetchall() 
+    print(rows)
 
     for row in rows: 
         print(row)
+
+
+handler()
