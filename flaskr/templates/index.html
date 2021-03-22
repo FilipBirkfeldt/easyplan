@@ -11,8 +11,6 @@ easyplan - stop struggle | Home
         <p class="explanation">Plan your courses and make sure your personal study plan adds up, with ease.
         </p>
     </div>
-
-
 <div id="contentbox">
     <div id="wrapper_left">
         <div id="title_left">
@@ -24,6 +22,8 @@ easyplan - stop struggle | Home
             <div id="formwrapper">
                 <div id="inputrow">
                     <div class="textfieldwrapper">
+                        {{ form.course.label() }}
+                        {{ form.course(class = "form-control", placeholder="Kurskod") }}
                         <input type="text" name="title[]" class="textfield" placeholder="Kurskod" autocomplete="off">
                     </div>
                     <div class="removebtnwrapper">                
@@ -35,7 +35,7 @@ easyplan - stop struggle | Home
                 <div id="submitaddwrapper">
                     <button id="addRow" type="button" class="addbtn"><i class="far fa-plus-square"></i></button>
                     <button type="submit" class="submitbtn" name="foo" value="bar"><i class="far fa-paper-plane"></i></button>
-                </div>
+                </div> 
             </div>
         </form>
      </div>
