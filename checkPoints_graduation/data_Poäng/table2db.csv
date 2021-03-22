@@ -1,0 +1,156 @@
+Kurskod,Poang,Niva,Kursnamn,lp1,lp2,lp3,lp4,Typ,Obl_valfr,InAk,FromYear
+FMAB45,5.0,G1,Endimensionell analys A1,1,,,,1,,,
+MMKA25,6.0,G1,Ritteknik/datorstödd ritning,1,,,,1,,,
+MMTA02,6.0,G1,Introduktion till maskinteknik,1,2.0,,,1,,,
+FMAB50,5.0,G1,Endimensionell analys A2,,2.0,,,1,,,
+FMAB20,6.0,G1,Linjär algebra,,2.0,,,1,,,
+EDAA65,6.0,G1,Programmering,,2.0,3.0,4.0,1,,,
+FMAB60,5.0,G1,Endimensionell analys A3,,,3.0,,1,,,
+MIOA01,9.0,G1,"Industriell ekonomi, allmän kurs",,,3.0,,1,,,
+FMAB30,6.0,G1,Flerdimensionell analys,,,,4.0,1,,,
+FAFA80,6.0,G1,Tillämpad vågrörelselära,,,,4.0,1,,,
+FMEA30,15.0,G1,Mekanik,1,2.0,,,2,,,
+MMVF01,11.0,G2,Termodynamik och strömningslära,1,2.0,,,2,,,
+MTTF01,5.0,G2,Logistik,,2.0,,,2,,,
+FKMA01,7.5,G1,"Konstruktionsmaterial, allmän kurs",,,3.0,,2,,,
+FHLF15,15.0,G2,"Hållfasthetslära, allmän kurs",,,3.0,4.0,2,,,
+MMTF20,7.5,G2,Tillverkningsmetoder,,,,4.0,2,,,
+MMEF05,7.5,G2,Transmissioner,1,,,,3,,,
+EIEF35,9.0,G2,Elektroteknikens grunder,1,2.0,,,3,,,
+MVKF01,6.0,G2,Energi och miljö i hållbar utveckling,1,2.0,,,3,,,
+FRTF05,7.5,G2,"Reglerteknik, allmän kurs",,2.0,,,3,,,
+MMEF01,5.0,G2,Tribologi,,,3.0,,3,,,
+MMKF01,5.0,G2,Utvecklingsmetodik,,,3.0,,3,,,
+FMSF55,7.5,G2,"Matematisk statistik, allmän kurs",,,,4.0,3,,,
+MAMF15,6.0,G2,Arbetsorganisation och ledarskap,,,3.0,,AltObl 3,,,
+EDAA01,7.5,G1,Programmeringsteknik - fördjupningskurs,,,3.0,,AltObl 3,,,
+MMVF05,7.5,G2,Värmeöverföring,,,3.0,,AltObl 3,,,
+MMTF25,7.5,G2,CAD/CAM/CAE,,,,4.0,AltObl 3,,,
+FHLF20,7.5,G2,Finita elementmetoden,,,,4.0,AltObl 3,,,
+MIOF20,6.0,G2,Företagsorganisation,,,,4.0,AltObl 3,,,
+MIOF25,6.0,G2,"Industriell ekonomi, fortsättningskurs",,,,4.0,AltObl 3,,,
+EIEN15,7.5,A,Elkraftsystem,1,,,,Energiteknik,V,4.0,3.0
+MVKN50,7.5,A,Introduktion till förbränningsmotorer,1,,,,Energiteknik,V,4.0,3.0
+MVKP10,7.5,A,Energisystemteknik,,2.0,,,Energiteknik,V,4.0,4.0
+MVKP15,7.5,A,Vindkraftsteknik,,2.0,,,Energiteknik,V,4.0,4.0
+MMVN01,7.5,A,Aerodynamik och kompressibel strömning,,,3.0,,Energiteknik,V,4.0,3.0
+MVKN20,7.5,A,Energianvändning,,,3.0,,Energiteknik,V,4.0,4.0
+MVKN60,7.5,A,Turbomaskinernas teori,,,3.0,,Energiteknik,V,4.0,3.0
+MVKN75,7.5,A,Ång- och gasturbinteknik,,,,4.0,Energiteknik,V,4.0,3.0
+MVKN15,7.5,A,Energiförsörjning,,,,4.0,Energiteknik,V,4.0,4.0
+MVKP01,7.5,A,Fjärrvärme och fjärrkyla,1,,,,Energiteknik,V,5.0,4.0
+MVKN95,7.5,A,Miljövänlig elproduktion,1,,,,Energiteknik,V,5.0,4.0
+MVKN30,7.5,A,Avancerad energihushållning,1,2.0,,,Energiteknik,V,5.0,5.0
+MVKN01,7.5,A,Projekteringsmetodik för termiska kraftverk,1,2.0,,,Energiteknik,V,5.0,4.0
+MVKN35,6.0,A,Energimarknader,,2.0,,,Energiteknik,V,5.0,4.0
+EIEN10,7.5,A,Vindkraftsystem,Periodiserad,,,,Energiteknik,V,4.0,4.0
+MTTN40,7.5,A,Förpackningsteknik och utveckling,1,,,,Logistik,V,4.0,4.0
+MTTN25,7.5,A,Materialhantering,1,,,,Logistik,V,4.0,3.0
+MTTN35,7.5,A,Förpackningslogistik,,2.0,,,Logistik,V,4.0,3.0
+MTTN75,7.5,A,Industriellt inköp,,2.0,,,Logistik,V,4.0,4.0
+MIOF10,7.5,G2,Material- och produktionsstyrning,,2.0,,,Logistik,V,4.0,3.0
+MTTN70,7.5,A,Internationell distributionsteknik,,,3.0,,Logistik,V,4.0,3.0
+MION01,7.5,A,Styrning av produktionssystem och materialflöden,,,3.0,,Logistik,V,4.0,4.0
+MTTN80,7.5,A,Logistik i försörjningskedjor,,,,4.0,Logistik,V,4.0,4.0
+MION45,7.5,A,Produktionsstrategi,,,,4.0,Logistik,V,4.0,3.0
+MTTN60,7.5,A,Verksamhetsutveckling,,,,4.0,Logistik,V,4.0,3.0
+MTTN20,7.5,A,Informationssystem för logistik och försörjningskedjor,1,,,,Logistik,V,5.0,4.0
+MION40,7.5,A,Simulering av industriella processer och logistiksystem,1,,,,Logistik,V,5.0,4.0
+MION50,7.5,A,Kvalitetsstyrning,,2.0,,,Logistik,V,5.0,3.0
+MMKN46,7.5,A,Datorbaserad konstruktionsanalys 1,1,,,,Mekatronik,V,4.0,3.0
+EDAP10,7.5,A,Flertrådad programmering,1,,,,Mekatronik,V,4.0,3.0
+FRTF20,7.5,G2,Tillämpad robotteknik,1,,,,Mekatronik,V,4.0,3.0
+EIEF40,9.0,G2,Industriell mätning och styrning,1,2.0,,,Mekatronik,V,4.0,4.0
+EIEN45,10.0,A,Tillämpad mekatronik,1,2.0,,,Mekatronik,V,4.0,4.0
+MMKN55,7.5,A,Konstruktionsteknik,,2.0,,,Mekatronik,V,4.0,3.0
+FRTN05,7.5,A,Olinjär reglering och servosystem,,2.0,,,Mekatronik,V,4.0,3.0
+FRTN40,7.5,A,Projekt i reglerteknik,,2.0,,,Mekatronik,V,4.0,3.0
+TNSN01,7.5,A,Servicerobotik,,2.0,,,Mekatronik,V,4.0,3.0
+EIEN25,15.0,A,"Kraftelektronik - komponenter, omvandlare, reglering och tillämpningar",,,3.0,4.0,Mekatronik,V,4.0,4.0
+EIEN01,10.0,A,"Mekatronik, industriell produktframtagning",,,3.0,4.0,Mekatronik,V,4.0,4.0
+FRTN01,10.0,A,Realtidssystem,,,3.0,4.0,Mekatronik,V,4.0,3.0
+EDAN15,7.5,A,Konstruktion av inbyggda system,,,,4.0,Mekatronik,V,4.0,3.0
+FMAA60,7.5,G1,Introduktion till reell analys,1,,,,Valfri_M,,1.0,1.0
+MIOA05,3.0,G1,Entreprenörskap,,,3.0,,Valfri_M,,1.0,1.0
+BMEN05,7.5,A,Biomekanik,1,,,,Valfri_M,,4.0,3.0
+EITG05,7.5,G2,Digital kommunikation,1,,,,Valfri_M,,4.0,4.0
+MION30,7.5,A,Industriell management,1,,,,Valfri_M,,4.0,4.0
+IYT000,15.0,G2,Ingenjörsinriktad yrkesträning,1,,,,Valfri_M,,4.0,3.0
+EDAP20,7.5,A,Intelligenta autonoma system,1,,,,Valfri_M,,4.0,4.0
+FMAF01,7.0,G2,Matematik - Funktionsteori,1,,,,Valfri_M,,4.0,2.0
+FRTN50,7.5,A,Optimering för maskininlärning,1,,,,Valfri_M,,4.0,3.0
+MIOF30,6.0,G2,Optimering och simulering,1,,,,Valfri_M,,4.0,3.0
+MMKN65,7.5,A,Projekt - Maskinkonstruktion,1,,,,Valfri_M,,4.0,3.0
+FKMN25,7.5,A,Projekt - materialteknik,1,,,,Valfri_M,,4.0,4.0
+FMEN35,7.5,A,Projekt - Teknisk mekanik,1,,,,Valfri_M,,4.0,4.0
+FHLN35,7.5,A,Projekt i hållfasthetslära,1,,,,Valfri_M,,4.0,3.0
+FRTN55,7.5,A,"Reglerteknik, fortsättningskurs",1,,,,Valfri_M,,4.0,4.0
+AEBF25,7.5,G2,Solenergi - grundkurs i solvärmeteknik,1,,,,Valfri_M,,4.0,4.0
+FMSF10,7.5,G2,Stationära stokastiska processer,1,,,,Valfri_M,,4.0,4.0
+MION25,7.5,A,Teknologistrategier,1,,,,Valfri_M,,4.0,3.0
+MMTN35,7.5,A,Tillämpad FEM - projektkurs,1,,,,Valfri_M,,4.0,3.0
+MAMN20,7.5,A,"Aerosolteknologi, projekt",1,2.0,,,Valfri_M,,4.0,4.0
+MMKF45,7.5,G2,Digital prototypframtagning,1,2.0,,,Valfri_M,,4.0,3.0
+MVKP05,7.5,A,Projekt - formula student,1,2.0,,,Valfri_M,,4.0,3.0
+EIEN30,7.5,A,Projekt i industriell elektroteknik och automation,1,2.0,,,Valfri_M,,4.0,3.0
+TNSF05,7.5,G2,Rehabiliteringsteknik,1,2.0,,,Valfri_M,,4.0,4.0
+MAMF55,7.5,G2,Aerosolteknologi,,2.0,,,Valfri_M,,4.0,4.0
+MION05,7.5,A,Affärsmarknadsföring,,2.0,,,Valfri_M,,4.0,3.0
+EDAG05,7.5,G2,Agil programvaruutveckling - projekt,,2.0,,,Valfri_M,,4.0,4.0
+EDAG01,7.5,G2,Effektiv C,,2.0,,,Valfri_M,,4.0,4.0
+MTTN45,7.5,A,Humanitär logistik - logistik i utvecklingsländer och vid katastrofer,,2.0,,,Valfri_M,,4.0,4.0
+IYT000,15.0,G2,Ingenjörsinriktad yrkesträning,,2.0,,,Valfri_M,,4.0,3.0
+MIOF15,7.5,G2,Marknadsföring,,2.0,,,Valfri_M,,4.0,2.0
+FMAF05,7.0,G2,Matematik - System och transformer,,2.0,,,Valfri_M,,4.0,2.0
+FMAN60,6.0,A,Optimering,,2.0,,,Valfri_M,,4.0,4.0
+MMKN65,7.5,A,Projekt - Maskinkonstruktion,,2.0,,,Valfri_M,,4.0,3.0
+FKMN25,7.5,A,Projekt - materialteknik,,2.0,,,Valfri_M,,4.0,4.0
+FMEN35,7.5,A,Projekt - Teknisk mekanik,,2.0,,,Valfri_M,,4.0,4.0
+FHLN35,7.5,A,Projekt i hållfasthetslära,,2.0,,,Valfri_M,,4.0,3.0
+IYT000,15.0,G2,Ingenjörsinriktad yrkesträning,,,3.0,,Valfri_M,,4.0,3.0
+FKMN15,7.5,A,Lätta material,,,3.0,,Valfri_M,,4.0,3.0
+FMAF01,7.0,G2,Matematik - Funktionsteori,,,3.0,,Valfri_M,,4.0,2.0
+ETIA10,7.5,G1,Patent och annan immaterialrätt,,,3.0,,Valfri_M,,4.0,3.0
+MMTN45,7.5,A,Produktionsteknik 2,,,3.0,,Valfri_M,,4.0,4.0
+MVKN80,7.5,A,Projekt - energiteknik,,,3.0,,Valfri_M,,4.0,3.0
+MMKN65,7.5,A,Projekt - Maskinkonstruktion,,,3.0,,Valfri_M,,4.0,3.0
+FKMN25,7.5,A,Projekt - materialteknik,,,3.0,,Valfri_M,,4.0,4.0
+FMEN35,7.5,A,Projekt - Teknisk mekanik,,,3.0,,Valfri_M,,4.0,4.0
+FHLN35,7.5,A,Projekt i hållfasthetslära,,,3.0,,Valfri_M,,4.0,3.0
+MMTN40,7.5,A,"Skärande bearbetning, fortsättningskurs",,,3.0,,Valfri_M,,4.0,3.0
+AEBF30,7.5,G2,Solel - grundkurs i solcellsteknik,,,3.0,,Valfri_M,,4.0,4.0
+VSMN10,7.5,A,Strukturdynamiska beräkningar,,,3.0,,Valfri_M,,4.0,4.0
+MION20,7.5,A,Tillämpad affärsanalys,,,3.0,,Valfri_M,,4.0,4.0
+FMAF10,5.0,G2,Tillämpad matematik - Linjära system,,,3.0,,Valfri_M,,4.0,3.0
+MAMN20,7.5,A,"Aerosolteknologi, projekt",,,3.0,4.0,Valfri_M,,4.0,4.0
+MAMF21,7.5,G2,"Arbetsmiljö, hälsa och säkerhet",,,3.0,4.0,Valfri_M,,4.0,4.0
+EDAF50,7.5,G2,C++ - programmering,,,3.0,4.0,Valfri_M,,4.0,4.0
+MMKF35,7.5,G2,Design i företag,,,3.0,4.0,Valfri_M,,4.0,3.0
+FMAN55,7.5,A,Kontinuerliga system,,,3.0,4.0,Valfri_M,,4.0,3.0
+MVKP05,7.5,A,Projekt - formula student,,,3.0,4.0,Valfri_M,,4.0,3.0
+EIEN30,7.5,A,Projekt i industriell elektroteknik och automation,,,3.0,4.0,Valfri_M,,4.0,3.0
+TNSF10,7.5,G2,"Universal design, teori och projekt",,,3.0,4.0,Valfri_M,,4.0,4.0
+FBRF01,7.5,G2,Grundläggande förbränning,,,,4.0,Valfri_M,,4.0,3.0
+IYT000,15.0,G2,Ingenjörsinriktad yrkesträning,,,,4.0,Valfri_M,,4.0,3.0
+FMAF05,7.0,G2,Matematik - System och transformer,,,,4.0,Valfri_M,,4.0,2.0
+FMNF10,6.0,G2,Numerisk analys,,,,4.0,Valfri_M,,4.0,4.0
+VSMN20,7.5,A,Programutveckling för tekniska tillämpningar,,,,4.0,Valfri_M,,4.0,4.0
+MMKN65,7.5,A,Projekt - Maskinkonstruktion,,,,4.0,Valfri_M,,4.0,3.0
+FKMN25,7.5,A,Projekt - materialteknik,,,,4.0,Valfri_M,,4.0,4.0
+FMEN35,7.5,A,Projekt - Teknisk mekanik,,,,4.0,Valfri_M,,4.0,4.0
+FHLN35,7.5,A,Projekt i hållfasthetslära,,,,4.0,Valfri_M,,4.0,3.0
+MIOF05,2.0,G2,"Projekt i industriell ekonomi, fortsättningskurs",,,,4.0,Valfri_M,,4.0,3.0
+FRTN70,7.5,A,"Projekt i system, reglering och maskininlärning",,,,4.0,Valfri_M,,4.0,4.0
+FKMN05,7.5,A,Pulverteknologi,,,,4.0,Valfri_M,,4.0,4.0
+EITN95,7.5,A,Simulering,,,,4.0,Valfri_M,,4.0,4.0
+MVKF25,7.5,G2,"Vätgas, batterier och bränsleceller",,,,4.0,Valfri_M,,4.0,3.0
+MMTN15,7.5,A,Projekt - Industriell produktion,1,,,,Valfri_M,,5.0,4.0
+MTTN85,7.5,A,Projektledning och forskningsmetodik inom produktion och logistik,1,2.0,,,Valfri_M,,5.0,5.0
+MTTN56,7.5,A,"Förpackningsmaterial, fördjupning",,2.0,,,Valfri_M,,5.0,4.0
+MMTN15,7.5,A,Projekt - Industriell produktion,,2.0,,,Valfri_M,,5.0,4.0
+MMTN15,0.0,,,,,3.0,,Valfri_M,,,
+MMTN15,0.0,,,,,,4.0,Valfri_M,,,
+MVKN85,7.5,A,Turbulent förbränning,Periodiserad,,,,Valfri_M,,4.0,3.0
+EIEN20,7.5,A,Elmaskinkonstruktion,Periodiserad,,,,Valfri_M,,4.0,3.0
+FKMN10,7.5,A,Högtemperaturmaterial,Periodiserad,,,,Valfri_M,,4.0,3.0
+FMEN25,7.5,A,Nanomekanik och flerskalig modellering,Periodiserad,,,,Valfri_M,,4.0,4.0

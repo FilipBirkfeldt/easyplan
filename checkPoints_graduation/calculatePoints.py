@@ -3,16 +3,10 @@ import numpy as np
 
 def readInData(): 
     "Reads in the data needed - Currently courses at M"
-    df_13 = pd.read_excel('checkPoints_graduation/data_Poäng/dataM.xlsx', sheet_name='1-3')
-    df_specialiseringar = pd.read_excel('checkPoints_graduation/data_Poäng/dataM.xlsx', sheet_name='Specialiseringar')
-    df_ValfriaM = pd.read_excel('checkPoints_graduation/data_Poäng/dataM.xlsx', sheet_name='Valfria_M')
-
-    courses_df = df_13.append(df_specialiseringar)
-    courses_df = courses_df.append(df_ValfriaM)
-
+    courses_df = pd.read_csv('checkPoints_graduation/data_Poäng/table2db.csv')
     courses_df.rename(columns={'Kurskod':'Kurskod'}, inplace=True)
-    courses_df['Poäng'] = courses_df['Poäng'].fillna(0)
-    courses_df['Poäng'] = courses_df['Poäng'].apply(lambda x:float(x))
+    courses_df['Poang'] = courses_df['Poang'].fillna(0)
+    courses_df['Poäng'] = courses_df['Poang'].apply(lambda x:float(x))
     return courses_df
 
 def __getPersonDf(courses_df, course_list):
@@ -24,21 +18,20 @@ def __getPersonDf(courses_df, course_list):
 
 def __calculateAllPoints(dfPerson) -> float: 
     "Calculates points for the person"
-    return dfPerson['Poäng'].sum()
+    return dfPerson['Poang'].sum()
 
 def __calculate_A_points(dfPerson) -> float: 
     "Calculates all A-Points"
-    return dfPerson[dfPerson['Nivå'].str.contains('A', na=False)]['Poäng'].sum()
+    return dfPerson[dfPerson['Niva'].str.contains('A', na=False)]['Poang'].sum()
 
 def __getPoints_specialization(dfPerson, speci)-> float: 
     "Returns the points for the given specialization"
-    return dfPerson[dfPerson.Typ == speci]['Poäng'].sum()
+    return dfPerson[dfPerson.Typ == speci]['Poang'].sum()
 
 
 def getAllPointsDict(progam, specialisering, course_list) -> dict:
     "Returns a dictionary for the specific person, allP, A-P, spec-P"
     courses_df = readInData()
-    course_list = courses_df.Kurskod.values
     person_df = __getPersonDf(courses_df, course_list)
 
     all_points = __calculateAllPoints(person_df)
@@ -74,14 +67,17 @@ def addPointsLeft_toDict(personDict) -> dict:
     return personDict
 
 
-def presentPerson(M:str, courseString:str, ): 
+def getPerson(M:str, courseString:str, )->dict: 
     "Bara för att visa er var vi är so far"
     listString = courseString.split(', ')
 
-    personDict = getAllPointsDict('M', 'Mekatronik', ['kommer va chill när den här fungerar'])
+    personDict = getAllPointsDict('M', 'Mekatronik', listString)
     personDict = addPointsLeft_toDict(personDict)
     return personDict
     
+stringInput = 'MVKN85, EIEN20'
+hej = getPerson('M', stringInput)
+print(hej.get('A_Points_left'))
 
 # TODO: 
 def addCourses(listCourse:list, df:pd.DataFrame())->pd.DataFrame(): 
@@ -105,4 +101,3 @@ def concatData():
     """concatenates all the data to a single dataframe """
     return 
     
-
