@@ -1,9 +1,12 @@
 from flaskr import app
 from flask import render_template, url_for
-
-@app.route("/")
+from flaskr.forms import courseList
+@app.route("/", methods =['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    courses = {'Course1' : '', 'Course2' : ''}
+    form = courseList(courses = courses)
+  
+    return render_template("index.html", form = form)
 
 @app.route("/about")
 def about_page():

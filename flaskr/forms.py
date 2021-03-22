@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, FieldList
+from wtforms import StringField, SubmitField, FieldList, FormField, Form
 
 
-def courseField(FlaskForm):
+class courseField(FlaskForm):
     course = StringField(label = 'Kurskod')
 
-def couseList(FlaskForm):
-    courseList = FieldList(courseField(), )
+class courseList(FlaskForm):
+    courseList = FieldList(FieldList(courseField), min_entries = 1)
+    submit = SubmitField('Beräkna')
