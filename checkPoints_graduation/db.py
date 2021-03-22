@@ -5,6 +5,7 @@ db_name = 'KURSER_M'
 table_name = 'Courses_M'
 
 import mysql.connector
+from sqlalchemy import create_engine 
 
 connection = mysql.connector.connect(
     host = url_endPoint, 
@@ -24,3 +25,10 @@ def handler():
 
 
 handler()
+
+def readInDF(): 
+    host = url_endPoint, 
+    user = userName,
+    passwd = passWord,
+    db = db_name,
+    cnx = create_engine('').connect() 

@@ -74,17 +74,14 @@ def addPointsLeft_toDict(personDict) -> dict:
     return personDict
 
 
-def presentPerson(): 
+def presentPerson(M:str, courseString:str, ): 
     "Bara för att visa er var vi är so far"
+    listString = courseString.split(', ')
+
     personDict = getAllPointsDict('M', 'Mekatronik', ['kommer va chill när den här fungerar'])
     personDict = addPointsLeft_toDict(personDict)
-    print()
-    for key in personDict.keys(): 
-        if 'left' in key: 
-            continue
-        print('\n', key, ' - ', personDict.get(key), '  left: ', personDict.get(key+'_left'))
-
-presentPerson()
+    return personDict
+    
 
 # TODO: 
 def addCourses(listCourse:list, df:pd.DataFrame())->pd.DataFrame(): 
