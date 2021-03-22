@@ -1,11 +1,20 @@
 from flaskr import app
-from flask import render_template, url_for
-from flaskr.forms import courseField
+from flask import render_template, url_for, redirect, flash, request
+#from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
-    form = courseField()
-  
-    return render_template("index.html", form = form)
+   # cursor = mysql.connection.cursor()
+   # cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    message = ''    
+    if request.method == 'POST':
+        fullname = request.form.getlist('field[]')
+        for value in fullname:  
+            message += value
+            #cur.execute("INSERT INTO fullnames (full_name) VALUES (%s)",[value])
+            #mysql.connection.commit()       
+        #cur.close()
+        #message = fullname[0]
+    return render_template('index.html', message=message)
 
 @app.route("/about")
 def about_page():
