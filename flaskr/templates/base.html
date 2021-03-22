@@ -58,19 +58,7 @@
 <script>
 $(window).keydown(function(){
     if (event.keyCode == 13) {
-              
         event.preventDefault();
-        var html = '';
-        html += '<div id="inputrow">';
-        html += '<div class="textfieldwrapper">';
-        html += '<input type="text" name="title[]" class="textfield" placeholder="Kurskod" autocomplete="off">';
-        html += '</div>';
-        html += '<div class="removebtnwrapper">';
-        html += '<button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button>';
-        html += '</div>';
-        html += '</div>';
-
-        $('#newRow').append(html); 
         
         if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
          var form = event.target.form;
@@ -81,29 +69,23 @@ $(window).keydown(function(){
     }
     }
     });
-
-
-    // add row
-    $("#addRow").click(function () {
-        var html = '';
-        html += '<div id="inputrow">';
-        html += '<div class="textfieldwrapper">';
-        html += '<input type="text" name="title[]" class="textfield" placeholder="Kurskod" autocomplete="off">';
-        html += '</div>';
-        html += '<div class="removebtnwrapper">';
-        html += '<button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button>';
-        html += '</div>';
-        html += '</div>';
-
-        $('#newRow').append(html);
+    $(document).ready(function(){
+    var max_input_fields = 100;
+    var add_input = $('.add-input');
+    var input_wrapper = $('.input-wrapper');
+    var new_input = '<div><div class="textfieldwrapper"><input type="text" name="field[]" class="textfield" placeholder="Kurskod" autocomplete="off"></div><a href="javascript:void(0);" class="remove-input" title="Remove input"><button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button></a></div>';
+    var add_input_count = 1; 
+    $(add_input).click(function(){
+        if(add_input_count < max_input_fields){
+            add_input_count++; 
+            $(input_wrapper).append(new_input); 
+        }
     });
-
-    // remove row
-    $(document).on('click', '#removeRow', function () {
-        $(this).closest('#inputrow').remove();
+    $(input_wrapper).on('click', '.remove-input', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+        add_input_count--;
     });
-
-
-    
+});
 </script>
 </html>

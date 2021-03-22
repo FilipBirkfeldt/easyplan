@@ -9,7 +9,7 @@ def index():
     if request.method == 'POST':
         fullname = request.form.getlist('field[]')
         for value in fullname:  
-            message += value
+            message += value + ','
             #cur.execute("INSERT INTO fullnames (full_name) VALUES (%s)",[value])
             #mysql.connection.commit()       
         #cur.close()

@@ -264,22 +264,22 @@ a:link, a:visited, a:hover, a:active {
     height:500px;
     float: left;
 }
-#inputrow{
-    width:300px;;
-    height:30px;
-    float:left;
-    margin-top:5px;
+.input-wrapper{
+    width:300px;
+    height:32px;
+    background-color: #EBEBEB
 }
 
 .textfieldwrapper{
     width:225px;
     height:32px;
+    margin-top:3px;
     float:left;
     background-color: #EBEBEB;
 }
 
 .textfield {
-    width:230px;
+    width:210px;
     height:30px;
     margin-left: 10px;
     float: left;
@@ -293,15 +293,11 @@ a:link, a:visited, a:hover, a:active {
     background-color: #EBEBEB;
     font-family: 'Open Sans'
 }
-.removebtnwrapper{
-    width:74px;
-    height:30px;
-    float:left;
-}
 
 .rmvbtn{
-    width:74px;
+    width:75px;
     height:32px;
+    margin-top:3px;
     float: left;
     display: flex;
     cursor: pointer;
@@ -329,7 +325,7 @@ a:link, a:visited, a:hover, a:active {
 
 .addbtn{
     float: left;
-    margin-top:5px;
+    margin-top:3px;
     width:148.5px;
     height:32px;
     display: flex;
@@ -349,7 +345,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .submitbtn{
-    margin-top:5px;
+    margin-top:3px;
     margin-left:3px;
     float: left;
     width:148.5px;
