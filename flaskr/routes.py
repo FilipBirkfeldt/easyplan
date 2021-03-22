@@ -1,20 +1,23 @@
 from flaskr import app
 from flask import render_template, url_for, redirect, flash, request
+from checkPoints_graduation.calculatePoints import getAllPointsDict
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
    # cursor = mysql.connection.cursor()
    # cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    message = ''    
+    data = {}   
     if request.method == 'POST':
         fullname = request.form.getlist('field[]')
-        for value in fullname:  
-            message += value
+        data = getAllPointsDict('M', 'Mekatronik', fullname)
+
+        #for value in fullname:  
+         #   message += value
             #cur.execute("INSERT INTO fullnames (full_name) VALUES (%s)",[value])
             #mysql.connection.commit()       
         #cur.close()
         #message = fullname[0]
-    return render_template('index.html', message=message)
+    return render_template('index.html', data=data)
 
 @app.route("/about")
 def about_page():
