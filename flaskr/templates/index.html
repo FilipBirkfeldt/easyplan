@@ -39,7 +39,17 @@ easyplan - stop struggle | Home
 
      <div id="wrapper_right">
         <h3 class="leftcont">Dina inskickade kurser:</h3>
-        <p class="leftcont">{{ message }}</p>
+  
+        <p class="leftcont">
+            {% if data|length > 0 %}
+            {{ data.Total_Points }}
+            {{ data.A_Points }}
+            {{ data.Spec_Points}}
+            {{ data.Total_Points_Left}}
+            {{ data.A_Points_Left}}
+            {{ data.Spec_Points_Left}}
+            {% endif %}
+        </p>
      </div>
     </div>
 
