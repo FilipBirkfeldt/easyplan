@@ -30,15 +30,14 @@ def ans():
 @app.route("/register", methods = ["POST", "GET"])
 def registration_page():
     loginForm = Registrator()
-    test = []
     if loginForm.validate_on_submit():
         test = 'Submit funka'
-        redirect(url_for('about_page'))
     if loginForm.errors != {}:
-        test = loginForm.errors.values()
-        redirect(url_for("index"))
+        for err_msg in loginForm.errors.values():
+            flash(f'There was an error with creating a user {err_msg}', category = 'danger')
+            #return redirect(url_for('registration_page'))
 
-    return render_template('register.html', form = loginForm, test = test)
+    return render_template('register.html', form = loginForm)
 
 
 if __name__ == "__main__":

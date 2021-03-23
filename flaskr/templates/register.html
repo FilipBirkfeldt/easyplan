@@ -10,10 +10,19 @@ easyplan - stop struggle | Register
     <form method = "POST", class = "form-register" style="color:white"> 
         {{ form.hidden_tag() }}
     <h1>
+
         <br> 
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+        <br>
         {{ form.specialisering.label() }}
         {{ form.specialisering(class = "field") }}
-        <br>
         <br> 
         {{ form.program.label() }}
         {{ form.program(class = "field") }}
