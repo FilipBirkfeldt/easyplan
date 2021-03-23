@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, FieldList, FormField, Form, PasswordField
+from wtforms import StringField, SubmitField, FieldList, FormField, Form, PasswordField, SelectField
 from wtforms.validators import Length, EqualTo, DataRequired, Email
-
+specChoices = [('Mek', 'Mekatronik'), ('Energi', 'Energi'), ('Log','Logistik')]
+programChoices = [('M', 'Maskinteknik')]
 
 class courseField(FlaskForm):
     course = StringField(label = 'Kurskod')
@@ -22,4 +23,6 @@ class Registrator(FlaskForm):
     email_address = StringField(label = 'Email Adress', validators = [Email(), DataRequired() ])
     password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15)])
     passwordConfirmation = PasswordField(label = 'Confirm password', validators = [EqualTo('password')])
+    program = SelectField(label = 'Program', choices = programChoices, validators = [DataRequired()])
+    specialisering = SelectField(label = 'Specialisering',  choices = specChoices, validators = [DataRequired()])
     submit = SubmitField(label = 'Skapa Konto')

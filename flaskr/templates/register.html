@@ -10,12 +10,17 @@ easyplan - stop struggle | Register
     <form method = "POST", class = "form-register" style="color:white"> 
         {{ form.hidden_tag() }}
     <h1>
-
+        <br> 
+        {{ form.specialisering.label() }}
+        {{ form.specialisering(class = "field") }}
+        <br>
+        <br> 
+        {{ form.program.label() }}
+        {{ form.program(class = "field") }}
         <br>
         {{ form.firstName.label() }}
         {{ form.firstName( placeholder = "Namn tack, nano penis" )}}
         <br>
-    
         {{ form.lastName.label() }}
         {{ form.lastName(placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}
         <br>

@@ -1,7 +1,7 @@
 from flaskr import app
 from flask import render_template, url_for, redirect, flash, request
 from checkPoints_graduation.calculatePoints import getAllPointsDict
-from flaskr.forms import Registrator
+from flaskr.forms import Registrator, specChoices, programChoices
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
