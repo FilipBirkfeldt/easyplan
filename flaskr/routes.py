@@ -1,6 +1,7 @@
 from flaskr import app
 from flask import render_template, url_for, redirect, flash, request
 from checkPoints_graduation.calculatePoints import getAllPointsDict
+from flaskr.forms import Registrator
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
@@ -29,17 +30,22 @@ def about_page():
 def donate_page():
     return render_template("donate.html")
 
-@app.route("/register")
-def register_page():
-    return render_template("register.html")
-
 @app.route("/ans")
 def ans():
     return render_template("ans.html", ans = 4)
 
-@app.route("/registration")
+@app.route("/register", methods = ["POST", "GET"])
 def registration_page():
-    pass
+    loginForm = Registrator()
+    test = []
+    if loginForm.validate_on_submit():
+        test = 'Submit funka'
+        redirect(url_for('about_page'))
+    if loginForm.errors != {}:
+        test = loginForm.errors.values()
+        redirect(url_for("index"))
+
+    return render_template('register.html', form = loginForm, test = test)
 
 
 

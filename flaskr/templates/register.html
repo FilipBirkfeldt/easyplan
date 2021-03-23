@@ -5,5 +5,39 @@ easyplan - stop struggle | Register
 {% endblock %}
 
 {% block content %}
+<body class="text-center"> 
+<div class = "container">
+    <form method = "POST", class = "form-register" style="color:white"> 
+        {{ form.hidden_tag() }}
+    <h1>
+
+        <br>
+        {{ form.firstName.label() }}
+        {{ form.firstName( placeholder = "Namn tack, nano penis" )}}
+        <br>
+    
+        {{ form.lastName.label() }}
+        {{ form.lastName(placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}
+        <br>
+        {{ form.email_address.label()  }}
+        {{ form.email_address(class = "form-control", placeholder = "Langer du en fake mailadress skickar vi dildos till ditt hem") }}
+        <br>
+    
+        {{ form.password.label() }}
+        {{ form.password(class = "form-control", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}
+        <br>
+        {{ form.passwordConfirmation.label() }}
+        {{ form.passwordConfirmation(class = "form-control", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}
+    
+        <br>
+        {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        <br>
+        {% for error in test %}
+        {{ error }} 
+        {% endfor %}
+    </h1>
+    </form>
+    </div>
+</body>
 
 {% endblock %}

@@ -14,11 +14,12 @@ class courseList(FlaskForm):
 
 class Registrator(FlaskForm):
 
-    def validate_email_address(self, email_adress_to_check):
-        pass
+    #def validate_email_address(self, email_adress_to_check):
+    #    pass
 
-    FirstName = StringField(label = 'Name', validators = [DataRequired, Length(min = 2, max = 20)])
-    LastName = StringField(label = 'Name', validators = [DataRequired, Length(min = 2, max = 20)])
-    email_address = StringField(label = 'Email Adress', validators = [Email(), DataRequired ])
+    firstName = StringField(label = 'First Name', validators = [DataRequired(), Length(min = 2, max = 20)])
+    lastName = StringField(label = 'Last Name', validators = [DataRequired(), Length(min = 2, max = 20)])
+    email_address = StringField(label = 'Email Adress', validators = [Email(), DataRequired() ])
     password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15)])
-    passwordConfirmation = PasswordField(label = 'Confirm password', validators = [EqualTo(password)])
+    passwordConfirmation = PasswordField(label = 'Confirm password', validators = [EqualTo('password')])
+    submit = SubmitField(label = 'Skapa Konto')
