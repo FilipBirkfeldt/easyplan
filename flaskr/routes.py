@@ -10,16 +10,9 @@ def index():
     data = {}   
     if request.method == 'POST':
         fullname = request.form.getlist('field[]')
-        #for value in fullname:  
-            #message += value + ','
         data = getAllPointsDict('M', 'Mekatronik', fullname)
         return render_template('index.html', data = data)
-        #for value in fullname:  
-         #   message += value
-            #cur.execute("INSERT INTO fullnames (full_name) VALUES (%s)",[value])
-            #mysql.connection.commit()       
-        #cur.close()
-        #message = fullname[0]
+        #send_data för att ladda ner excel filer t.ex.
     return render_template('index.html', data=data)
 
 @app.route("/about")
@@ -46,8 +39,6 @@ def registration_page():
         redirect(url_for("index"))
 
     return render_template('register.html', form = loginForm, test = test)
-
-
 
 
 if __name__ == "__main__":
