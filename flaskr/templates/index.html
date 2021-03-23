@@ -40,6 +40,7 @@ easyplan - stop struggle | Home
         <h3 class="leftcont">Dina inskickade kurser:</h3>
   
         <p class="leftcont">
+            <!-- 
             {% if data|length > 0 %}
             Total Points : {{ data.Total_Points }}
             <br>
@@ -50,6 +51,18 @@ easyplan - stop struggle | Home
             {{ data.Total_Points_left}}
             {{ data.A_Points_left}}
             {{ data.Spec_Points_left}}
+            Total Points left : {{ data.Total_Points_left}}
+            <br>
+            A Points left : {{ data.A_Points_left}}
+            <br>
+            Special Point left : {{ data.Spec_Points_left}}
+            {% endif %}
+            -->
+            {% if data|length > 0%}
+            {% for key, value in data.items() %}
+            {{key}} : {{value}} 
+            <br>
+            {% endfor %}
             {% endif %}
         </p>
      </div>

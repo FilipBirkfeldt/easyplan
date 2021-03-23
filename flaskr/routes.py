@@ -12,7 +12,7 @@ def index():
         #for value in fullname:  
             #message += value + ','
         data = getAllPointsDict('M', 'Mekatronik', fullname)
-
+        return render_template('index.html', data = data)
         #for value in fullname:  
          #   message += value
             #cur.execute("INSERT INTO fullnames (full_name) VALUES (%s)",[value])
@@ -36,6 +36,11 @@ def register_page():
 @app.route("/ans")
 def ans():
     return render_template("ans.html", ans = 4)
+
+@app.route("/registration")
+def registration_page():
+    pass
+
 
 
 
