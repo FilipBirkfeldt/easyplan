@@ -29,6 +29,10 @@ def about_page():
 def donate_page():
     return render_template("donate.html")
 
+@app.route("/register")
+def register_page():
+    return render_template("register.html")
+
 @app.route("/ans")
 def ans():
     return render_template("ans.html", ans = 4)
