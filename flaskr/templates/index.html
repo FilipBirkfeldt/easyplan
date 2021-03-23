@@ -19,21 +19,20 @@ easyplan - stop struggle | Home
         </div>
 
         
-        <div id="content_left">
+    <div id="content_left">
         <form method="POST">
             <div id="formwrapper">
-                 <form method="POST">
-                        <div class="input-wrapper">
-                                <input type="text" name="field[]" class="textfield" placeholder="Kurskod" autocomplete="off">
-                                
-                        </div>
+                <div class="input-wrapper">
+                    <input type="text" name="field[]" class="textfield" placeholder="Kurskod" autocomplete="off">             
+                </div>
 
-                    <div id="submitaddwrapper"></div>
+                <div id="submitaddwrapper">
                     <a href="javascript:void(0);" class="add-input" title="Add input"><button id="addRow" type="button" class="addbtn"><i class="far fa-plus-square"></i></button></a>
                     <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
-                    </div>
-                </form>
+                </div>
             </div>
+        </form>
+    </div>
             
      </div>
 
@@ -49,6 +48,9 @@ easyplan - stop struggle | Home
             <br>
             Spec Points : {{ data.Spec_Points}}
             <br>
+            {{ data.Total_Points_left}}
+            {{ data.A_Points_left}}
+            {{ data.Spec_Points_left}}
             Total Points left : {{ data.Total_Points_left}}
             <br>
             A Points left : {{ data.A_Points_left}}

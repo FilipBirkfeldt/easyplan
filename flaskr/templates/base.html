@@ -46,6 +46,7 @@
                         <a href="/"><i class="fas fa-home"></i> &nbsp &nbsp &nbsp &nbsp &nbsp;Home</a>
                         <a href=" {{ url_for( 'about_page' ) }}"><i class="fas fa-info"></i>&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp;About</a>
                         <a href="{{ url_for('donate_page')}}"><i class="fas fa-hand-holding-usd"></i>&nbsp&nbsp &nbsp &nbsp &nbsp;Donate</a>
+                        <a href="{{ url_for('register_page')}}"><i class="far fa-user-circle"></i>&nbsp &nbsp &nbsp &nbsp;Register</a>
                     </div>
                   </div> 
             </div>
@@ -56,36 +57,39 @@
 </body>
 
 <script>
-$(window).keydown(function(){
-    if (event.keyCode == 13) {
-        event.preventDefault();
-        
-        if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
-         var form = event.target.form;
-        var index = Array.prototype.indexOf.call(form, event.target);
-        form.elements[index + 2].focus();
-        event.preventDefault(); 
-
-    }
-    }
-    });
     $(document).ready(function(){
     var max_input_fields = 100;
     var add_input = $('.add-input');
     var input_wrapper = $('.input-wrapper');
     var new_input = '<div><div class="textfieldwrapper"><input type="text" name="field[]" class="textfield" placeholder="Kurskod" autocomplete="off"></div><a href="javascript:void(0);" class="remove-input" title="Remove input"><button id="removeRow" type="button" class="rmvbtn"><i class="far fa-trash-alt"></i></button></a></div>';
     var add_input_count = 1; 
+
     $(add_input).click(function(){
         if(add_input_count < max_input_fields){
             add_input_count++; 
             $(input_wrapper).append(new_input); 
         }
     });
+
     $(input_wrapper).on('click', '.remove-input', function(e){
         e.preventDefault();
         $(this).parent('div').remove();
         add_input_count--;
     });
+});
+
+    $(window).keydown(function(){
+    if (event.keyCode == 13) {
+    event.preventDefault();
+        
+        if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+            var form = event.target.form;
+            var index = Array.prototype.indexOf.call(form, event.target);
+            form.elements[index + 2].focus();
+            $(input_wrapper).append(new_input);
+            event.preventDefault();
+        }
+    }
 });
 </script>
 </html>
