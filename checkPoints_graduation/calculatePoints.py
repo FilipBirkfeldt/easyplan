@@ -67,7 +67,7 @@ def addPointsLeft_toDict(personDict) -> dict:
     return personDict
 
 
-def getPerson(M:str, courseString:str, )->dict: 
+def getPerson(M:str, courseString:str)->dict: 
     "Bara för att visa er var vi är so far"
     listString = courseString.split(', ')
 
@@ -77,7 +77,9 @@ def getPerson(M:str, courseString:str, )->dict:
     
 stringInput = 'MVKN85, EIEN20'
 hej = getPerson('M', stringInput)
-print(hej.get('A_Points_left'))
+print()
+for key in hej.keys():
+     print(key,': ', hej.get(key))
 
 # TODO: 
 def addCourses(listCourse:list, df:pd.DataFrame())->pd.DataFrame(): 
