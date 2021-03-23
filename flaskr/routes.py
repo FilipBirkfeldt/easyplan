@@ -9,8 +9,8 @@ def index():
     data = {}   
     if request.method == 'POST':
         fullname = request.form.getlist('field[]')
-        for value in fullname:  
-            message += value + ','
+        #for value in fullname:  
+            #message += value + ','
         data = getAllPointsDict('M', 'Mekatronik', fullname)
 
         #for value in fullname:  

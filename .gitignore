@@ -1,1 +1,5 @@
 .DS_STORE
+flaskr/__pycache__
+__pycache__
+__pycache__/
+*.pyc
