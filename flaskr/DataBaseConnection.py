@@ -98,9 +98,44 @@ class DataBaseConnection():
             'program' : df['program'].values, 
             'specialisering' : df['specialisering'].values
         })
+
+class User(DataBaseConnection):
+    def __init__(self):
+        self.userId = id
+        self.email_address : str
+        self.password : str
+        self.FirstName : str
+        #LastName : str
+        self.Program : str
+        self.Specialization : str
+    def create_user(self, df_user ):
+        self.email_address = df_user['userMail']
+        self.password = df_user['userPassWord']
+        self.FirstName = df_user['firstName']
+        self.Program = df_user['program']
+        self.Specialization = df_user['specialisering']
+        self.authenticated = True
+
+    def is_authenticated(self):
+        return self.authenticated
+    
+    def get_id(self):
+        return self.email_address
+    
+    def is_active(self):
+        return True
+    
+    def is_anonymous(self):
+        return False
+    
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
-    print(dbConnection.getUserData())
+    df = dbConnection.getUserData()
+    #df = df.loc[df['userMail'] == 'chris@sidde.sidde']
+    #user_to_create = User()
+    #user_to_create.create_user(df)
+    #print(user_to_create.password)
+    print(df)
 
     
 

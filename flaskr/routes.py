@@ -1,7 +1,9 @@
-from flaskr import app, dbConnection, bcrypt
+from flaskr import app, dbConnection, bcrypt, login_manager
 from flask import render_template, url_for, redirect, flash, request
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
 from flaskr.forms import Registrator, specChoices, programChoices
+from flaskr.DataBaseConnection import User
+from flask_login import login_user, logout_user, login_required
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
@@ -14,6 +16,7 @@ def index():
         #return render_template('index.html', data = data, )
         #send_data för att ladda ner excel filer t.ex.
     return render_template('index.html', form = loginForm)
+
 
 @app.route("/about")
 def about_page():
@@ -32,7 +35,7 @@ def register_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
         #userID, userMail, userPassWord, firstName, program, specialisering
-        condition = dbConnection.insertNewUser(3, loginForm.email_address.data, 
+        condition = dbConnection.insertNewUser(6, loginForm.email_address.data, 
                                                 bcrypt.generate_password_hash(loginForm.password.data).decode('utf-8'),
                                                 loginForm.firstName.data,
                                                 loginForm.program.data,
@@ -51,9 +54,22 @@ def register_page():
 @app.route("/login", methods=["POST", "GET"])
 def login_page():
     loginForm = Registrator()
+    if loginForm.validate_on_submit():
+        df = dbConnection.getUserData()
+        df = df.loc[df['userMail'] == loginForm.email_address.data]
+        user = User()
+        user = user.create_user(df)
+        if user:
+            if bcrypt.check_password_hash(user.password, loginForm.password.data):
+                login_user(user, remember = True)
+                return redirect(url_for('about_page'))
     return render_template('login.html', form = loginForm)
 
 @app.route("/forgot", methods=["POST", "GET"])
 def forgot_page():
     loginForm = Registrator()
     return render_template('forgotpw.html', form = loginForm)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)

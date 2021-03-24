@@ -1,4 +1,5 @@
-from flaskr import dbConnection
+from flaskr import app
+from flaskr.DataBaseConnection import User
 from flask import flask_login
 
 # https://developers.google.com/gmail/api/quickstart/python - inställningar för GMAIL-API
@@ -59,3 +60,13 @@ class ResetPassword():
         server = smtplib.SMTP_SSL("smtp.gmail.com", port, context=context)
         server.login(sender_email, password)
         server.sendmail(sender_email, userEmail, text)
+
+#class User():
+##    userId = id
+ #   email_address : str
+ #   password : str
+ #   FirstName : str
+ #   #LastName : str
+ #   Program : str
+ #   Specialization : str
+
