@@ -1,4 +1,4 @@
-from flaskr import app, dbConnection
+from flaskr import app, dbConnection, bcrypt
 from flask import render_template, url_for, redirect, flash, request
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
 from flaskr.forms import Registrator, specChoices, programChoices
@@ -32,8 +32,8 @@ def register_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
         #userID, userMail, userPassWord, firstName, program, specialisering
-        condition = dbConnection.insertNewUser(2, loginForm.email_address.data, 
-                                                loginForm.password.data,
+        condition = dbConnection.insertNewUser(3, loginForm.email_address.data, 
+                                                bcrypt.generate_password_hash(loginForm.password.data).decode('utf-8'),
                                                 loginForm.firstName.data,
                                                 loginForm.program.data,
                                                 loginForm.specialisering.data)

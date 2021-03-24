@@ -43,7 +43,7 @@ class DataBaseConnection():
     def insertNewUser(self, userID, userMail, userPassWord, firstName, program, specialisering):
         "Inserts a new user to userTable, return True if possible, else return False"
 
-        newUser = self.__ifNew_UserEmail(userMail)
+        newUser = self.ifNew_UserEmail(userMail)
         if newUser == False: 
             return False
         elif newUser == True: 
@@ -64,7 +64,7 @@ class DataBaseConnection():
             )
             return True
 
-    def __ifNew_UserEmail(self, email:str) -> bool: 
+    def ifNew_UserEmail(self, email:str) -> bool: 
         "Checks if the userMail is a new user. Returns True if new user,   else False"
         table_name = 'user_tableTable'
         df = pd.read_sql("SELECT userMail FROM " + table_name + " WHERE userMail="+"'"+email+"'" ,self.dbConnection)
@@ -80,6 +80,15 @@ class DataBaseConnection():
         tableUsers = 'user_tableTable'
         df = pd.read_sql("SELECT * FROM Courses_M WHERE Typ="+"'"+specialisering+"'" ,self.dbConnection)
         return df
+
+    def get_UserPassword(self, email:str):
+        table_name = 'user_tableTable'
+        df = pd.read_sql("SELECT userPassWord FROM " + table_name + " WHERE userMail="+"'"+email+"'", self.dbConnection)
+        return df.iloc[0][0]
+
+if __name__ == '__main__':
+    dbConnection = DataBaseConnection()
+    print(dbConnection.getUserData())
 
     
 
