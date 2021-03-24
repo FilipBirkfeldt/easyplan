@@ -7,6 +7,8 @@ easyplan - stop struggle | Login
 {% block login_register %}
 <div id="rightlogin">
             <div id="rightwrapper">
+                {{ form.hidden_tag() }}
+                <form method = "POST">
                 <h3 class="login">Login to Your easyplan Account</h3>
                 <div id="loginfield">
                     <p class="loginfield"><i class="fas fa-at"></i></p>{{ form.email_address(class = "logintextfield", placeholder = "E-mail") }}
@@ -21,6 +23,7 @@ easyplan - stop struggle | Login
                 <div class="infotxtstack">
                     <a href="{{ url_for( 'forgot_page' ) }}"><p class="logintext_rgt">Forgot your <i>password?</i></p></a>
                 </div>
+                </form>
             </div>
 </div>
 

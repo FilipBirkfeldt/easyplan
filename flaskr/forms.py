@@ -31,5 +31,5 @@ class Registrator(FlaskForm):
                                                                 DataRequired( message = "Please enter a password")])
     passwordConfirmation = PasswordField(label = 'Confirm password', validators = [EqualTo('password', message = 'Password does not match, make sure password is case-sensitive')
                                                                                     ,DataRequired(message = "Please re-enter password")])
-    program = SelectField(label = 'Program', choices = programChoices, default = 'm')
-    specialisering = SelectField(label = 'Specialisering',  choices = specChoices, default = 'mekatronik')
+    #program = SelectField(label = 'Program', choices = programChoices, default='M')
+    #specialisering = SelectField(label = 'Specialisering',  choices = specChoices, default='Mekatronik')

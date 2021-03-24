@@ -11,7 +11,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+<p>
 
+</p>
 <div id="logincontainer">
     <div id="login_box">
         <div id="leftlogin">
@@ -43,22 +45,9 @@
                     <p class="login_left_info"><i class="fas fa-check-square"></i>&nbsp Save your data for later use</p>
                     <p class="login_left_info"><i class="fas fa-check-square"></i>&nbsp Save time</p>
                 </div>
- 
-            </div>
-        </div>
-
-        {% block login_register %}
-        {% endblock %}
-    </div>
-</div>
-    <!----
-
-
-     <div id="wrapper_right">
-        <h3 class="leftcont">hej</h3>
-  
-        <p class="leftcont">
-            {% with messages = get_flashed_messages() %}
+                <br>
+                <p>
+                {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <ul class=flashes>
                     {% for message in messages %}
@@ -66,9 +55,13 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-        </p>
-     </div>
+               </p>
+            </div>
+        </div>
+
+        {% block login_register %}
+        {% endblock %}
     </div>
---->
+</div>
 </body>
 </html>

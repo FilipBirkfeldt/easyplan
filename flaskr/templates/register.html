@@ -9,6 +9,8 @@ easyplan - stop struggle | Register
 
         <div id="rightlogin">
             <div id="rightwrapper">
+                <form method = "POST">
+                {{ form.hidden_tag() }}
                 <h3 class="login">Register to Your easyplan Account</h3>
                 <div id="loginfield">
                     <p class="loginfield"><i class="fas fa-user"></i></p>{{ form.firstName(class = "logintextfield", placeholder = "First name" )}}
@@ -25,10 +27,11 @@ easyplan - stop struggle | Register
                 <div id="loginfield">
                     <p class="loginfield"><i class="fas fa-key"></i></p>{{ form.passwordConfirmation(class = "logintextfield", placeholder = "Repeat Password") }}
                 </div>
-                <button class="btnlogin">Register</button>
+                <button type="submit" class="btnlogin" name="cmdsubmit" value="bar">Register</button>
                 <div class="infotxtstack">
                     <a href="{{ url_for( 'login_page' ) }}"><p class="logintext_lft">Go back to login</p></a>
                 </div>
+            </form>
             </div>
         </div>
 

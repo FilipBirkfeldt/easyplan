@@ -9,6 +9,8 @@ easyplan - stop struggle | Login
 
         <div id="rightlogin">
             <div id="rightwrapper">
+                <form method = "POST">
+                {{ form.hidden_tag() }}
                 <h3 class="login">Forgot your password?</h3>
                 <p class="logintext_lft">Enter your e-mail below to get information about how you can retriew your account.</p>
                 <div id="loginfield">
@@ -21,6 +23,7 @@ easyplan - stop struggle | Login
                 <div class="infotxtstack">
                     <a href="{{ url_for( 'login_page' ) }}"><p class="logintext_rgt">Go back to login</p></a>
                 </div>
+                </form>
             </div>
         </div>
 

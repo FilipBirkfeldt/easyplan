@@ -34,12 +34,13 @@ def ans():
 def register_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
-        #userID, userMail, userPassWord, firstName, program, specialisering
+
         condition = dbConnection.insertNewUser(6, loginForm.email_address.data, 
+
                                                 bcrypt.generate_password_hash(loginForm.password.data).decode('utf-8'),
                                                 loginForm.firstName.data,
-                                                loginForm.program.data,
-                                                loginForm.specialisering.data)
+                                                'M',
+                                                'Energi')
         if condition:
             flash(f'Registrering funkade')
             return redirect(url_for(('index')))
