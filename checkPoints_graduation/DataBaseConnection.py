@@ -31,9 +31,47 @@ class DataBaseConnection():
 
     def readAllData(self): 
         "Reades in all of the data from Courses_M"
-        frame = pd.read_sql("SELECT * from "+self.table_name, self.dbConnection)
+        frame = pd.read_sql("SELECT * FROM "+self.table_name, self.dbConnection)
         print(frame)
 
 
+    def getUserData(self): 
+        "Reades in all of the data from Courses_M"
+        tableUsers = 'user_tableTable'
+        frame = pd.read_sql("SELECT * FROM "+tableUsers, self.dbConnection)
+        print('\n', frame)
+        return frame
 
-DataBaseConnection().readAllData()
+    def insertNewUser(self, userID, userMail, userPassWord, firstName, program, specialisering):
+        "Inserts a new user to userTable"
+        table_name = 'user_tableTable'
+        table_cols = [
+            'userID', 
+            'userMail', 
+            'userPassWord', 
+            'firstName', 
+            'program', 
+            'specialisering'
+        ]
+        data_array = [userID, userMail, userPassWord, firstName, program, specialisering]
+        df_insert = pd.DataFrame(columns=table_cols, data = [data_array])
+        print('\n', df_insert)
+        df_insert.to_sql(
+            table_name, con=self.dbConnection, if_exists='append', index=False, method=None
+        )
+
+
+
+DBconnection = DataBaseConnection()
+df = DBconnection.getUserData() 
+
+userID = 1
+userMail = 'nils-olofsson@telia.com'
+userPassWord = 'nissePisse_pung'
+firstName = 'Nisse'
+program = 'MASKIN'
+spec = 'Energi ;)'
+#DBconnection.insertNewUser(userID, userMail, userPassWord, firstName, program, spec)
+
+
+
