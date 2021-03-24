@@ -3,7 +3,7 @@ import numpy as np
 
 def readInData(): 
     "Reads in the data needed - Currently courses at M"
-    courses_df = pd.read_csv('checkPoints_graduation/data_Poäng/table2db.csv')
+    courses_df = pd.read_csv('flaskr/checkPoints_graduation/data_Poäng/table2db.csv')
     courses_df.rename(columns={'Kurskod':'Kurskod'}, inplace=True)
     courses_df['Poang'] = courses_df['Poang'].fillna(0)
     courses_df['Poäng'] = courses_df['Poang'].apply(lambda x:float(x))

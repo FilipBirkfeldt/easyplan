@@ -1,6 +1,6 @@
-from flaskr import app
+from flaskr import app, dbConnection
 from flask import render_template, url_for, redirect, flash, request
-from checkPoints_graduation.calculatePoints import getAllPointsDict
+from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
 from flaskr.forms import Registrator, specChoices, programChoices
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 #from flaskr.forms import courseField
@@ -37,8 +37,16 @@ def ans():
 def registration_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
-        pass
-        flash(f'Registrering funkade')
+        #userID, userMail, userPassWord, firstName, program, specialisering
+        condition = dbConnection.insertNewUser(2, loginForm.email_address.data, 
+                                                loginForm.password.data,
+                                                loginForm.firstName.data,
+                                                loginForm.program.data,
+                                                loginForm.specialisering.data)
+        if condition:
+            flash(f'Registrering funkade')
+        else:
+            flash(f'Registrering fungerade inte')
         #df = dbConnection.readAllData()
        # if loginForm.email_address.data in df.email.values():
         #   dbConnection.insertNewUser()
