@@ -41,30 +41,30 @@ class DataBaseConnection():
         return df
 
     def insertNewUser(self, userID, userMail, userPassWord, firstName, program, specialisering):
-        "Inserts a new user to userTable"
-        table_name = 'user_tableTable'
-        table_cols = [
-            'userID', 
-            'userMail', 
-            'userPassWord', 
-            'firstName', 
-            'program', 
-            'specialisering'
-        ]
-        data_array = [userID, userMail, userPassWord, firstName, program, specialisering]
-        df_insert = pd.DataFrame(columns=table_cols, data = [data_array])
+        "Inserts a new user to userTable, return True if possible, else return False"
 
-        df_insert.to_sql(
-            table_name, con=self.dbConnection, if_exists='append', index=False, method=None
-        )
+        newUser = self.__ifNew_UserEmail(userMail)
+        if newUser == False: 
+            return False
+        elif newUser == True: 
+            table_name = 'user_tableTable'
+            table_cols = [
+                'userID', 
+                'userMail', 
+                'userPassWord', 
+                'firstName', 
+                'program', 
+                'specialisering'
+            ]
+            data_array = [userID, userMail, userPassWord, firstName, program, specialisering]
+            df_insert = pd.DataFrame(columns=table_cols, data = [data_array])
 
-    def get_Specialization_Data(self, specialisering:str): 
-        "Returns the data for a specification"
-        tableUsers = 'user_tableTable'
-        df = pd.read_sql("SELECT * FROM Courses_M WHERE Typ="+"'"+specialisering+"'" ,self.dbConnection)
-        return df
+            df_insert.to_sql(
+                table_name, con=self.dbConnection, if_exists='append', index=False, method=None
+            )
+            return True
 
-    def ifNew_UserEmail(self, email:str) -> bool: 
+    def __ifNew_UserEmail(self, email:str) -> bool: 
         "Checks if the userMail is a new user. Returns True if new user,   else False"
         table_name = 'user_tableTable'
         df = pd.read_sql("SELECT userMail FROM " + table_name + " WHERE userMail="+"'"+email+"'" ,self.dbConnection)
@@ -74,3 +74,12 @@ class DataBaseConnection():
             return True
         else:
             return False
+
+    def get_Specialization_Data(self, specialisering:str): 
+        "Returns the data for a specification"
+        tableUsers = 'user_tableTable'
+        df = pd.read_sql("SELECT * FROM Courses_M WHERE Typ="+"'"+specialisering+"'" ,self.dbConnection)
+        return df
+
+    
+
