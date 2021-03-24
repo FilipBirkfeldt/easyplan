@@ -86,6 +86,18 @@ class DataBaseConnection():
         df = pd.read_sql("SELECT userPassWord FROM " + table_name + " WHERE userMail="+"'"+email+"'", self.dbConnection)
         return df.iloc[0][0]
 
+    def getAllUserData_from_email(self, userEmail:str) -> dict: 
+        "Returns all the info for the user given the userEmail"
+        table_name = 'user_tableTable'
+        df = pd.read_sql("SELECT * FROM " + table_name + " WHERE userMail="+"'"+userEmail+"'" ,self.dbConnection)
+        return ({
+            'userID' : df['userID'].values, 
+            'userMail' : df['userMail'].values,
+            'userPassWord' : df['userPassWord'].values,
+            'firstName' : df['firstName'].values, 
+            'program' : df['program'].values, 
+            'specialisering' : df['specialisering'].values
+        })
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
     print(dbConnection.getUserData())
