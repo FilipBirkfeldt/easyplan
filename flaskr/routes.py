@@ -27,8 +27,8 @@ def donate_page():
 def ans():
     return render_template("ans.html", ans = 4)
 
-@app.route("/login", methods = ["POST", "GET"])
-def login_page():
+@app.route("/register", methods = ["POST", "GET"])
+def register_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
         #userID, userMail, userPassWord, firstName, program, specialisering
@@ -50,5 +50,15 @@ def login_page():
             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
             #return redirect(url_for('registration_page'))
 
+    return render_template('register.html', form = loginForm)
+
+
+@app.route("/login", methods=["POST", "GET"])
+def login_page():
+    loginForm = Registrator()
     return render_template('login.html', form = loginForm)
 
+@app.route("/forgot", methods=["POST", "GET"])
+def forgot_page():
+    loginForm = Registrator()
+    return render_template('forgotpw.html', form = loginForm)

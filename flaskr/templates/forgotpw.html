@@ -13,19 +13,17 @@ easyplan - stop struggle | Login
 
         <div id="rightlogin">
             <div id="rightwrapper">
-                <h3 class="login">Login to Your easyplan Account</h3>
+                <h3 class="login">Forgot your password?</h3>
+                <p class="logintext_lft">Enter your e-mail below to get information about how you can retriew your account.</p>
                 <div id="loginfield">
                     <p class="loginfield"><i class="fas fa-user"></i></p>{{ form.email_address(class = "logintextfield", placeholder = "E-mail") }}
                 </div>
-                <div id="loginfield">
-                    <p class="loginfield"><i class="fas fa-key"></i></p>{{ form.password(class = "logintextfield", placeholder = "Password") }} 
-                </div>
-                <button class="btnlogin">Login</button>
+                <button class="btnlogin">Send</button>
                 <div class="infotxtstack">
                     <a href="{{ url_for( 'register_page' ) }}"><p class="logintext_lft">Not a member?</p></a>
                 </div>
                 <div class="infotxtstack">
-                    <a href="{{ url_for( 'forgot_page' ) }}"><p class="logintext_rgt">Forgot your <i>password?</i></p></a>
+                    <a href="{{ url_for( 'login_page' ) }}"><p class="logintext_rgt">Go back to login</p></a>
                 </div>
             </div>
         </div>

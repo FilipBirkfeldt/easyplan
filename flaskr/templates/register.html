@@ -1,0 +1,40 @@
+{% extends "user.html" %}
+
+{% block logintitle %}
+easyplan - stop struggle | Register
+{% endblock %}
+
+{% block login_register %}
+<div id="logincontainer">
+    <div id="login_box">
+        <div id="leftlogin">
+
+        </div>
+
+        <div id="rightlogin">
+            <div id="rightwrapper">
+                <h3 class="login">Register to Your easyplan Account</h3>
+                <div id="loginfield">
+                    <p class="loginfield"><i class="fas fa-user"></i></p>{{ form.firstName(class = "logintextfield", placeholder = "First name" )}}
+                </div>
+                <div id="loginfield">
+                    <p class="loginfield"><i class="fas fa-key"></i></p>{{ form.lastName(class = "logintextfield", placeholder = "Surname" )}} 
+                </div>
+                <div id="loginfield">
+                    <p class="loginfield"><i class="fas fa-key"></i></p> {{ form.email_address(class = "logintextfield", placeholder = "E-mail") }} 
+                </div>
+                <div id="loginfield">
+                    <p class="loginfield"><i class="fas fa-key"></i></p>{{ form.password(class = "logintextfield", placeholder = "Password") }} 
+                </div>
+                <div id="loginfield">
+                    <p class="loginfield"><i class="fas fa-key"></i></p>{{ form.passwordConfirmation(class = "logintextfield", placeholder = "Repeat Password") }}
+                </div>
+                <button class="btnlogin">Register</button>
+                <div class="infotxtstack">
+                    <a href="{{ url_for( 'login_page' ) }}"><p class="logintext_lft">Go back to login</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block logintitle %}{% endblock %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/917431db2c.js" crossorigin="anonymous"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    {% block login_register %}
+    {% endblock %}
+
+
+    <!----
+<div id="container">
+    <div id="textbox">
+        <h2 class="textboxtitle">Register an account</h2>
+        <p class="explanation">Fill in the fields below to create an account.</p>
+    </div>
+    
+<div id="contentbox">
+    <div id="wrapper_left">
+        <div id="title_left">
+            <h3 class="leftcont">Register</h3>
+            <p class="leftcont">Blablabla</p>
+        </div>
+
+        
+    <div id="content_left">
+        <form method = "POST" >
+            {{ form.hidden_tag() }}
+            <div id="formwrapper">
+                    {{ form.program.label() }}
+                    {{ form.program(class = "textfield") }}             
+                
+                    {{ form.specialisering.label() }}
+                    {{ form.specialisering(class = "textfield") }}             
+
+                    {{ form.firstName.label() }}
+                    {{ form.firstName(class = "textfield", placeholder = "Namn tack, nano penis" )}}             
+
+                    {{ form.lastName.label() }}
+                    {{ form.lastName(class = "textfield", placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}             
+
+                    {{ form.email_address.label() }}
+                    {{ form.email_address(class = "textfield", placeholder = "Langer du en fake mailadress skickar vi dildos till ditt hem") }}             
+
+                    {{ form.password.label() }}
+                    {{ form.password(class = "textfield", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}             
+
+                    {{ form.passwordConfirmation.label() }}
+                    {{ form.passwordConfirmation(class = "textfield", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}       
+                
+            </div>
+
+                <div id="submitaddwrapper">
+                    <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+            
+</div>
+
+     <div id="wrapper_right">
+        <h3 class="leftcont">hej</h3>
+  
+        <p class="leftcont">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </p>
+     </div>
+    </div>
+--->
+</body>
+</html>
