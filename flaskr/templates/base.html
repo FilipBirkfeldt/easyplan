@@ -40,12 +40,12 @@
             </div>
     
             <div id="menucontainer">
-                <button id="myBtn"><i class="far fa-user-circle fa-lg"></i></button>
+                <a href="{{ url_for( 'login_page' ) }}"><i class="far fa-user-circle fa-lg"></i></a>
                 <div class="dropdown" style="float:right;">
                     <button class="dropbtn"><i class="fa fa-bars fa-lg"></i></button>
                     <div class="dropdown-content">
                         <a href="/"><i class="fas fa-home"></i> &nbsp &nbsp &nbsp &nbsp &nbsp;Home</a>
-                        <a href=" {{ url_for( 'about_page' ) }}"><i class="fas fa-info"></i>&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp;About</a>
+                        <a href="{{ url_for( 'about_page' ) }}"><i class="fas fa-info"></i>&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp;About</a>
                         <a href="{{ url_for('donate_page')}}"><i class="fas fa-hand-holding-usd"></i>&nbsp&nbsp &nbsp &nbsp &nbsp;Donate</a>
                     </div>
                   </div> 
@@ -56,60 +56,7 @@
 
 {% block content %}{% endblock %}
 
-<!-- Log in Form-->
-<div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-header">
-            <h3 class="explanation">Log in</h3>
-        </div>
-
-        <div id="modal-login">
-            <form method = "POST" >
-                {{ form.csrf_token }}
-                {{ form.hidden_tag() }}
-                        <p class="login">{{ form.program.label(class="login_explanationfield") }}</p>
-                        {{ form.program(class = "login_inputfield") }}             
-
-                        <p class="login">{{ form.specialisering.label(class="login_explanationfield") }}</p>
-                        {{ form.specialisering(class = "login_inputfield") }}             
-    
-                        <p class="login">{{ form.firstName.label(class="login_explanationfield") }}</p>
-                        {{ form.firstName(class = "login_inputfield", placeholder = "Name" )}}             
-    
-                        <p class="login">{{ form.lastName.label(class="login_explanationfield") }}</p>
-                        {{ form.lastName(class = "login_inputfield", placeholder = "Surname" )}}             
-    
-                        <p class="login">{{ form.email_address.label(class="login_explanationfield") }}</p>
-                        {{ form.email_address(class = "login_inputfield", placeholder = "email@adress.esy") }}             
-    
-                        <p class="login">{{ form.password.label(class="login_explanationfield") }}</p>
-                        {{ form.password(class = "login_inputfield", placeholder = "Password") }}             
-    
-                        <p class="login">{{ form.passwordConfirmation.label(class="login_explanationfield") }}</p>
-                        {{ form.passwordConfirmation(class = "login_inputfield", placeholder = "Repeat password") }}            
-
-    
-                        <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
-                        
-        </div>
-        <div id="modal-error">
-            <p class="leftcont">
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul class=flashes>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            </p>
-        </div>
-    </div>
-  
-  </div>
 </body>
 
 <script>
@@ -147,31 +94,5 @@
         }
     }
 });
-
-// Get the log in Form
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the log in Form
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the log in Form
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the log in Form
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the log in Form
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the log in Form, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
 </html>

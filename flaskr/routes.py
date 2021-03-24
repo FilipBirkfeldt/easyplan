@@ -13,13 +13,7 @@ def index():
         data = getAllPointsDict('M', 'Mekatronik', fullname)
         #return render_template('index.html', data = data, )
         #send_data för att ladda ner excel filer t.ex.
-    if loginForm.validate_on_submit():
-        test = 'Submit funka'
-    if loginForm.errors != {}:
-        for err_msg in loginForm.errors.values():
-            flash(f'There was an error with creating a user {err_msg}', category = 'danger')
-
-    return render_template('index.html', form = loginForm, data = data)
+    return render_template('index.html', form = loginForm)
 
 @app.route("/about")
 def about_page():
@@ -33,8 +27,8 @@ def donate_page():
 def ans():
     return render_template("ans.html", ans = 4)
 
-@app.route("/register", methods = ["POST", "GET"])
-def registration_page():
+@app.route("/login", methods = ["POST", "GET"])
+def login_page():
     loginForm = Registrator()
     if loginForm.validate_on_submit():
         #userID, userMail, userPassWord, firstName, program, specialisering
@@ -56,5 +50,5 @@ def registration_page():
             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
             #return redirect(url_for('registration_page'))
 
-    return render_template('register.html', form = loginForm)
+    return render_template('login.html', form = loginForm)
 
