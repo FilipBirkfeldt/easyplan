@@ -1,4 +1,5 @@
-body {
+html, body {
+    height: 100%;
     background-color:#EBEBEB;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -528,3 +529,16 @@ p.login{
     background: #555;
   }
 
+
+  /* ---------------------- Login page ----------------------------*/ 
+
+
+#login_box{
+    background-image: url(/static/pic/logotype.svg);
+    width:25%;
+    height:33%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
