@@ -39,17 +39,12 @@ def register_page():
                                                 loginForm.specialisering.data)
         if condition:
             flash(f'Registrering funkade')
+            return redirect(url_for(('index')))
         else:
             flash(f'Registrering fungerade inte')
-        #df = dbConnection.readAllData()
-       # if loginForm.email_address.data in df.email.values():
-        #   dbConnection.insertNewUser()
-            # return redirect(dit i vill efter)
     if loginForm.errors != {}:
         for err_msg in loginForm.errors.values():
             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
-            #return redirect(url_for('registration_page'))
-
     return render_template('register.html', form = loginForm)
 
 
