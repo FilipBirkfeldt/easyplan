@@ -11,60 +11,48 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    {% block login_register %}
-    {% endblock %}
 
+<div id="logincontainer">
+    <div id="login_box">
+        <div id="leftlogin">
+            <div id="leftwrapper">
+                <div class="leftcontent_title">
+                    <div id="colorcontainer">
+                        <div class="square1_1"></div>
+                        <div class="square1_2"></div>
+                        <div class="square1_2"></div>
+                        <div class="square1_2"></div>
+        
+                        <div class="square2_1"></div>
+                        <div class="square2_2"></div>
+                        <div class="square2_3"></div>
+                        <div class="square2_4"></div>
+        
+                        <div class="square3_1"></div>
+                        <div class="square3_2"></div>
+                        <div class="square3_3"></div>
+                        <div class="square3_4"></div>
+                        
+                    </div>
+                    <h1 class="login">easyplan</h1>
+                </div>
 
-    <!----
-<div id="container">
-    <div id="textbox">
-        <h2 class="textboxtitle">Register an account</h2>
-        <p class="explanation">Fill in the fields below to create an account.</p>
-    </div>
-    
-<div id="contentbox">
-    <div id="wrapper_left">
-        <div id="title_left">
-            <h3 class="leftcont">Register</h3>
-            <p class="leftcont">Blablabla</p>
+                <div class="leftcontent_info">
+                    <h3 class="login_left_info">Start your journey with us</h3>
+                    <p class="login_left_info"><i class="fas fa-check-square"></i>&nbsp Keep track of your studies</p>
+                    <p class="login_left_info"><i class="fas fa-check-square"></i>&nbsp Save your data for later use</p>
+                    <p class="login_left_info"><i class="fas fa-check-square"></i>&nbsp Save time</p>
+                </div>
+ 
+            </div>
         </div>
 
-        
-    <div id="content_left">
-        <form method = "POST" >
-            {{ form.hidden_tag() }}
-            <div id="formwrapper">
-                    {{ form.program.label() }}
-                    {{ form.program(class = "textfield") }}             
-                
-                    {{ form.specialisering.label() }}
-                    {{ form.specialisering(class = "textfield") }}             
-
-                    {{ form.firstName.label() }}
-                    {{ form.firstName(class = "textfield", placeholder = "Namn tack, nano penis" )}}             
-
-                    {{ form.lastName.label() }}
-                    {{ form.lastName(class = "textfield", placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}             
-
-                    {{ form.email_address.label() }}
-                    {{ form.email_address(class = "textfield", placeholder = "Langer du en fake mailadress skickar vi dildos till ditt hem") }}             
-
-                    {{ form.password.label() }}
-                    {{ form.password(class = "textfield", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}             
-
-                    {{ form.passwordConfirmation.label() }}
-                    {{ form.passwordConfirmation(class = "textfield", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}       
-                
-            </div>
-
-                <div id="submitaddwrapper">
-                    <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
-                </div>
-            </div>
-        </form>
+        {% block login_register %}
+        {% endblock %}
     </div>
-            
 </div>
+    <!----
+
 
      <div id="wrapper_right">
         <h3 class="leftcont">hej</h3>
