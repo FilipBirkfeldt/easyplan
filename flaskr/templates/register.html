@@ -5,52 +5,70 @@ easyplan - stop struggle | Register
 {% endblock %}
 
 {% block content %}
-<body class="text-center"> 
-<div class = "container">
-    <form method = "POST", class = "form-register" style="color:white"> 
-        {{ form.hidden_tag() }}
-    <h1>
 
-        <br> 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class=flashes>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-        <br>
-        {{ form.specialisering.label() }}
-        {{ form.specialisering(class = "field") }}
-        <br> 
-        {{ form.program.label() }}
-        {{ form.program(class = "field") }}
-        <br>
-        {{ form.firstName.label() }}
-        {{ form.firstName( placeholder = "Namn tack, nano penis" )}}
-        <br>
-        {{ form.lastName.label() }}
-        {{ form.lastName(placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}
-        <br>
-        {{ form.email_address.label()  }}
-        {{ form.email_address(class = "form-control", placeholder = "Langer du en fake mailadress skickar vi dildos till ditt hem") }}
-        <br>
+<div id="container">
+    <div id="textbox">
+        <h2 class="textboxtitle">Register an account</h2>
+        <p class="explanation">Fill in the fields below to create an account.</p>
+    </div>
     
-        {{ form.password.label() }}
-        {{ form.password(class = "form-control", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}
-        <br>
-        {{ form.passwordConfirmation.label() }}
-        {{ form.passwordConfirmation(class = "form-control", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}
-    
-        <br>
-        {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-        <br>
-        {% for error in test %}
-        {{ error }} 
-        {% endfor %}
-    </h1>
-    </form>
+<div id="contentbox">
+    <div id="wrapper_left">
+        <div id="title_left">
+            <h3 class="leftcont">Register</h3>
+            <p class="leftcont">Blablabla</p>
+        </div>
+
+        
+    <div id="content_left">
+        <form method = "POST" >
+            {{ form.hidden_tag() }}
+            <div id="formwrapper">
+                    {{ form.program.label() }}
+                    {{ form.program(class = "textfield") }}             
+                
+                    {{ form.specialisering.label() }}
+                    {{ form.specialisering(class = "textfield") }}             
+
+                    {{ form.firstName.label() }}
+                    {{ form.firstName(class = "textfield", placeholder = "Namn tack, nano penis" )}}             
+
+                    {{ form.lastName.label() }}
+                    {{ form.lastName(class = "textfield", placeholder = "Med så fullt första namn hoppas jag efternamnet är snyggare" )}}             
+
+                    {{ form.email_address.label() }}
+                    {{ form.email_address(class = "textfield", placeholder = "Langer du en fake mailadress skickar vi dildos till ditt hem") }}             
+
+                    {{ form.password.label() }}
+                    {{ form.password(class = "textfield", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}             
+
+                    {{ form.passwordConfirmation.label() }}
+                    {{ form.passwordConfirmation(class = "textfield", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}            
+            </div>
+
+                <div id="submitaddwrapper">
+                    <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+            
+</div>
+
+     <div id="wrapper_right">
+        <h3 class="leftcont">hej</h3>
+  
+        <p class="leftcont">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </p>
+     </div>
     </div>
 </body>
 

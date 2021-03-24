@@ -25,4 +25,3 @@ class Registrator(FlaskForm):
     passwordConfirmation = PasswordField(label = 'Confirm password', validators = [EqualTo('password', message = 'Password does not match, make sure password is case-sensitive')])
     program = SelectField(label = 'Program', choices = programChoices, validators = [DataRequired()])
     specialisering = SelectField(label = 'Specialisering',  choices = specChoices, validators = [DataRequired()])
-    submit = SubmitField(label = 'Skapa Konto')

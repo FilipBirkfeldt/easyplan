@@ -13,7 +13,15 @@ def index():
         data = getAllPointsDict('M', 'Mekatronik', fullname)
         return render_template('index.html', data = data)
         #send_data för att ladda ner excel filer t.ex.
-    return render_template('index.html', data=data)
+    
+    loginForm = Registrator()
+    if loginForm.validate_on_submit():
+        test = 'Submit funka'
+    if loginForm.errors != {}:
+        for err_msg in loginForm.errors.values():
+            flash(f'There was an error with creating a user {err_msg}', category = 'danger')
+
+    return render_template('index.html', data=data, form=loginForm)
 
 @app.route("/about")
 def about_page():
