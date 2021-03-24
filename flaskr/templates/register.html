@@ -43,7 +43,8 @@ easyplan - stop struggle | Register
                     {{ form.password(class = "textfield", placeholder = "Gör ett enkelt lösenord för ryssarna tack") }}             
 
                     {{ form.passwordConfirmation.label() }}
-                    {{ form.passwordConfirmation(class = "textfield", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}            
+                    {{ form.passwordConfirmation(class = "textfield", placeholder = "Upprepa lösenordet ditt dumma fanskap") }}       
+                
             </div>
 
                 <div id="submitaddwrapper">
@@ -60,13 +61,13 @@ easyplan - stop struggle | Register
   
         <p class="leftcont">
             {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul class=flashes>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         </p>
      </div>
     </div>

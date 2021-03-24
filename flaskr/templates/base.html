@@ -68,8 +68,8 @@
 
         <div id="modal-login">
             <form method = "POST" >
+                {{ form.csrf_token }}
                 {{ form.hidden_tag() }}
-
                         <p class="login">{{ form.program.label(class="login_explanationfield") }}</p>
                         {{ form.program(class = "login_inputfield") }}             
 
