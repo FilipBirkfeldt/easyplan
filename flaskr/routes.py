@@ -32,7 +32,6 @@ def register_page():
     if registerForm.validate_on_submit():
 
         condition = dbConnection.insertNewUser(6, registerForm.email_address.data, 
-
                                                 bcrypt.generate_password_hash(registerForm.password.data).decode('utf-8'),
                                                 registerForm.firstName.data,
                                                 'M',
@@ -68,6 +67,12 @@ def login_page():
         for err_msg in logForm.errors.values():
             flash(f'Error {err_msg}', category = 'danger')
     return render_template('login.html', form = logForm)
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('about_page'))
 
 @app.route("/forgot", methods=["POST", "GET"])
 def forgot_page():
