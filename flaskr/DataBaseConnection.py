@@ -108,12 +108,12 @@ class User(DataBaseConnection):
         #LastName : str
         self.Program : str
         self.Specialization : str
-    def create_user(self, df_user ):
-        self.email_address = df_user['userMail']
-        self.password = df_user['userPassWord']
-        self.FirstName = df_user['firstName']
-        self.Program = df_user['program']
-        self.Specialization = df_user['specialisering']
+    def create_user(self, df_user):
+        self.email_address = df_user['userMail'].iloc[0]
+        self.password = df_user['userPassWord'].iloc[0]
+        self.FirstName = df_user['firstName'].iloc[0]
+        self.Program = df_user['program'].iloc[0]
+        self.Specialization = df_user['specialisering'].iloc[0]
         self.authenticated = True
 
     def is_authenticated(self):
@@ -131,11 +131,14 @@ class User(DataBaseConnection):
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
     df = dbConnection.getUserData()
-    #df = df.loc[df['userMail'] == 'chris@sidde.sidde']
-    #user_to_create = User()
-    #user_to_create.create_user(df)
-    #print(user_to_create.password)
-    print(df)
+    df = df.loc[df['userMail'] == 'test@test.test']
+    user_to_create = User()
+    user_to_create.create_user(df)
+    if not df.empty:
+        print(type(user_to_create.password))
+    else:
+        print("Naah")
+    #print(df)
 
     
 

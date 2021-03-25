@@ -1,7 +1,7 @@
 from flaskr import app, dbConnection, bcrypt, login_manager
 from flask import render_template, url_for, redirect, flash, request
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
-from flaskr.forms import Registrator, specChoices, programChoices
+from flaskr.forms import Registrator, specChoices, programChoices, loginForm
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
@@ -32,13 +32,13 @@ def ans():
 
 @app.route("/register", methods = ["POST", "GET"])
 def register_page():
-    loginForm = Registrator()
-    if loginForm.validate_on_submit():
+    registerForm = Registrator()
+    if registerForm.validate_on_submit():
 
-        condition = dbConnection.insertNewUser(6, loginForm.email_address.data, 
+        condition = dbConnection.insertNewUser(6, registerForm.email_address.data, 
 
-                                                bcrypt.generate_password_hash(loginForm.password.data).decode('utf-8'),
-                                                loginForm.firstName.data,
+                                                bcrypt.generate_password_hash(registerForm.password.data).decode('utf-8'),
+                                                registerForm.firstName.data,
                                                 'M',
                                                 'Energi')
         if condition:
@@ -46,25 +46,32 @@ def register_page():
             return redirect(url_for(('index')))
         else:
             flash(f'Registrering fungerade inte')
-    if loginForm.errors != {}:
-        for err_msg in loginForm.errors.values():
+    if registerForm.errors != {}:
+        for err_msg in registerForm.errors.values():
             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
-    return render_template('register.html', form = loginForm)
+    return render_template('register.html', form = registerForm)
 
 
 @app.route("/login", methods=["POST", "GET"])
 def login_page():
-    loginForm = Registrator()
-    if loginForm.validate_on_submit():
+    logForm = loginForm()
+    if logForm.validate_on_submit():
         df = dbConnection.getUserData()
-        df = df.loc[df['userMail'] == loginForm.email_address.data]
+        df = df.loc[df['userMail'] == logForm.email_address.data]
         user = User()
-        user = user.create_user(df)
-        if user:
-            if bcrypt.check_password_hash(user.password, loginForm.password.data):
+        user.create_user(df)
+        if not df.empty:
+            if bcrypt.check_password_hash(user.password , logForm.password.data):
                 login_user(user, remember = True)
                 return redirect(url_for('about_page'))
-    return render_template('login.html', form = loginForm)
+            else:
+                flash(f'Wrong password')
+        else:
+            flash(f'No such user')
+    if logForm.errors != {}:
+        for err_msg in logForm.errors.values():
+            flash(f'Error {err_msg}', category = 'danger')
+    return render_template('login.html', form = logForm)
 
 @app.route("/forgot", methods=["POST", "GET"])
 def forgot_page():
@@ -73,4 +80,8 @@ def forgot_page():
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get(user_id)
+    df = dbConnection.getUserData()
+    df = df.loc[df['userMail'] == user_id]
+    user = User()
+    user.create_user(df)
+    return user
