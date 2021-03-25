@@ -33,3 +33,9 @@ class Registrator(FlaskForm):
                                                                                     ,DataRequired(message = "Please re-enter password")])
     #program = SelectField(label = 'Program', choices = programChoices, default='M')
     #specialisering = SelectField(label = 'Specialisering',  choices = specChoices, default='Mekatronik')
+    
+class loginForm(FlaskForm):
+
+    email_address = StringField(label = 'Email Adress', validators = [Email(message = 'Please enter a valid email address'), DataRequired()])
+    password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15, message = 'Password must be between %(min)d and %(max)d characters'),
+                                                                DataRequired( message = "Please enter a password")])

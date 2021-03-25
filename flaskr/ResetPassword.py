@@ -1,10 +1,3 @@
-from flaskr import app
-from flaskr.DataBaseConnection import User
-from flask import flask_login
-
-# https://developers.google.com/gmail/api/quickstart/python - inställningar för GMAIL-API
-# pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
 import email
 import smtplib 
 import ssl
