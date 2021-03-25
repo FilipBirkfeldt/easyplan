@@ -534,7 +534,6 @@ h1.login{
 
 #loginfield{
     width:90%;
-    height:40%;
     float:left;
     display: flex;
     align-items: center;
@@ -546,7 +545,7 @@ h1.login{
 }
 
 .logintextfield{
-    height:80%;
+    height:3.25vh;
     width:100%;
     border: none;
     outline: none;
