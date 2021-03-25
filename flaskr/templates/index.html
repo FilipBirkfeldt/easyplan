@@ -10,7 +10,8 @@ easyplan - stop struggle | Home
         <h2 class="textboxtitle">Stop struggle!</h2>
         <p class="explanation">Plan your courses and make sure your personal study plan adds up, with ease.</p>
     </div>
-    
+ 
+    <!--
 <div id="contentbox">
     <div id="wrapper_left">
         <div id="title_left">
@@ -40,24 +41,6 @@ easyplan - stop struggle | Home
         <h3 class="leftcont">Dina inskickade kurser:</h3>
   
         <p class="leftcont">
-            <!-- 
-            {% if data|length > 0 %}
-            Total Points : {{ data.Total_Points }}
-            <br>
-            A Points : {{ data.A_Points }}
-            <br>
-            Spec Points : {{ data.Spec_Points}}
-            <br>
-            {{ data.Total_Points_left}}
-            {{ data.A_Points_left}}
-            {{ data.Spec_Points_left}}
-            Total Points left : {{ data.Total_Points_left}}
-            <br>
-            A Points left : {{ data.A_Points_left}}
-            <br>
-            Special Point left : {{ data.Spec_Points_left}}
-            {% endif %}
-            -->
             {% if data|length > 0%}
             {% for key, value in data.items() %}
             {{key}} : {{value}} 
@@ -67,8 +50,8 @@ easyplan - stop struggle | Home
         </p>
      </div>
     </div>
-
-
+    -->
+    <!--
     <div id="explanationcontent">
         <div id="explanationtext">
         <h3 class="explanation">Here's how it works!</p>
@@ -116,6 +99,7 @@ easyplan - stop struggle | Home
             <p class="explanation">Genom att hela tiden hålla koll på din framgång blir det lätt att ta examen, se till att klara tentorna!</p>
         </div>
     </div>
+    --->
 </div>
 {% endblock %}
 
