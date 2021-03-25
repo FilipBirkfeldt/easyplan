@@ -39,3 +39,8 @@ class loginForm(FlaskForm):
     email_address = StringField(label = 'Email Adress', validators = [Email(message = 'Please enter a valid email address'), DataRequired()])
     password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15, message = 'Password must be between %(min)d and %(max)d characters'),
                                                                 DataRequired( message = "Please enter a password")])
+
+
+class Programs(FlaskForm):
+    program = SelectField('Program', choices=[('M', 'Maskinteknik'),('I','Industriell Ekonomi'),('E','Elektroteknik')])
+    spec = SelectField('Specialization', choices=[])

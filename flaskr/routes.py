@@ -8,14 +8,10 @@ from flask_login import login_user, logout_user, login_required
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
-    data = {}   
-    loginForm = Registrator()
-    if request.method == 'POST':
-        fullname = request.form.getlist('field[]')
-        data = getAllPointsDict('M', 'Mekatronik', fullname)
-        #return render_template('index.html', data = data, )
-        #send_data för att ladda ner excel filer t.ex.
-    return render_template('index.html', form = loginForm)
+    program=Program()
+    programs.spec.choices = [(spec.id,city.name)for program in Program Spec.query.filter_by(program='M').all()]
+
+    return render_template('index.html', program=program)
 
 
 @app.route("/about")

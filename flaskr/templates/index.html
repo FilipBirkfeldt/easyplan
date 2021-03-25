@@ -10,6 +10,90 @@ easyplan - stop struggle | Home
         <h2 class="textboxtitle">Stop struggle!</h2>
         <p class="explanation">Plan your courses and make sure your personal study plan adds up, with ease.</p>
     </div>
+
+    <div id="programcontainer">
+        <div id="explanationfield">
+            <div class="explanation_title">
+                <h2 class="expln_title">Here's how it works! &nbsp &nbsp</h2>
+            </div>
+
+            <div class="explanation_text">
+                <p class="expln_text">Studying at The Faculty of Engineering, LTH gives a world-class education. You come in touch with
+                    world-leading research and get an early contact with the industry. However, the requirements to get a BSc is sometimes hard to keep track of.
+                    easyplan gives you a piece of mind and does the magic for you!
+                    <br>
+                </p>
+            </div>
+            <div class="icons_for_success">
+                <div><p class="expln_text"><i class="fas fa-hat-wizard fa-4x"></i></p></div>
+                <div><p class="expln_text"><i class="fas fa-long-arrow-alt-right fa-4x"></i></p></div>
+                <div><p class="expln_text"><i class="fas fa-graduation-cap fa-4x"></i></p></div>
+            </div>
+            <div class="explanation_text">
+                <p class="expln_text">Start of by selecting your personal program and specialization below. In the righ hand tables 
+                    you can tick the boxes related to your completed courses. Press submit and you will get a clear view of
+                    what you have accomplished and what's left until you can graduate!
+                </p>
+            </div>
+            <div class="explanation_details">
+                <form method="POST">
+                    <select name="program_select" id="programselector">
+                        {% for name in program %}
+                        <option value="{{ data.name }}">{{ data.name }}</option>
+                        {% endfor %} 
+                      </select>
+                </form>
+
+                <form method="POST">
+                    <select id="specselector">
+                        <option value="0">Specialisering</option>
+                        <option value="1">Mekatronik</option>
+                        <option value="2">Energiteknik</option>
+                        <option value="2">Supply 'vi har så mtk att göra azz' management</option>
+                      </select>
+                </form>
+            </div>
+        </div>
+
+        <div id="programfield">
+            <form method="POST" name="courses">
+            <div id="programfield_content">
+                <div class="pf_title">
+                    <h2 class="pf">Study year 1</h2>
+                </div>
+                <table class="pf">
+                    <tr class="head">
+                        <th class="th1">Course Code</th>
+                        <th class="th2">Course Name</th>
+                        <th class="th3">Credits</th>
+                        <th class="th4">Completed</th>
+                    </tr>
+
+                    <tr class="content">
+                        <td class="td1">MVKN50</td>
+                        <td class="td2">Introduction to Combustion Engines</td>
+                        <td class="td3">7.5</td>
+                        <td class="td4"><input type="checkbox" checked="checked"></td>
+                      </tr>
+
+                      <tr class="content">
+                        <td class="td1">MVKN50</td>
+                        <td class="td2">Introduction to Combustion Engines</td>
+                        <td class="td3">7.5</td>
+                        <td class="td4"><input type="checkbox" checked="checked"></td>
+                      </tr>
+
+                </table>
+                
+            </div>
+            </form>
+
+            <div id="programfield_footer">
+                <button type="submit" class="btnsubmitprgm" name="courses" value="bar">Submit</button>
+            </div>
+        </div>
+
+    </div>
  
     <!--
 <div id="contentbox">
