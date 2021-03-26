@@ -100,6 +100,14 @@ class DataBaseConnection():
             'specialisering' : df['specialisering'].values
         })
 
+    def getSpecis_from_Program(self, program:str) -> list: 
+        "Returns a list of the specializations given the program"
+        table_name = 'specializations'
+        df = pd.read_sql("SELECT " + program +" FROM " + table_name, self.dbConnection)
+        values = df[program].apply(lambda x:len(x)>0)
+        speci = df[values]
+        return speci.values
+
 class User(DataBaseConnection):
     def __init__(self):
         self.userId = id
@@ -131,7 +139,8 @@ class User(DataBaseConnection):
     
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
-    df = dbConnection.getUserData()
+    dbConnection.getSpecis_from_Program('M')
+    """df = dbConnection.getUserData()
     df = df.loc[df['userMail'] == 'test@test.test']
     user_to_create = User()
     user_to_create.create_user(df)
@@ -139,7 +148,7 @@ if __name__ == '__main__':
         print(type(user_to_create.password))
     else:
         print("Naah")
-    #print(df)
+    #print(df)"""
 
 #Såhär borde "Spec" till routes se ut!
 
