@@ -41,6 +41,8 @@ class loginForm(FlaskForm):
                                                                 DataRequired( message = "Please enter a password")])
 
 
-class Programs(FlaskForm):
-    program = SelectField('Program', choices=[('M', 'Maskinteknik'),('I','Industriell Ekonomi'),('E','Elektroteknik')])
+class ProgramsForm(FlaskForm):
+    program = SelectField('Program', choices=[('D','Datateknik'), ('W','Ekosystemteknik'), ('E','Elektroteknik'), ('I','Industriell Ekonomi'), ('K','Kemiteknik'), ('L','Lantmäteri'),
+                                                ('M','Maskinteknik'), ('TD','Maskinteknik - Teknisk Design'), ('BME','Medicin och Teknik'), ('F','Teknisk Fysik'), ('Pi','Teknisk Matematik'), 
+                                                    ('N','Teknisk nanovetenskap'), ('V','Väg- och vattenbyggnad')])
     spec = SelectField('Specialization', choices=[])

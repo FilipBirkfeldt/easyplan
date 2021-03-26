@@ -36,7 +36,25 @@
 
 </body>
 
-<script>
+    <script>
+        let program_select = document.getElementById('program');
+        let spec_select = document.getElementById('spec');
 
-</script>
+        program_select.onchange = function(){
+            program = program_select.value;
+            
+            fetch('/specialization/' + program).then(function(response){
+                response.json().then(function(data){
+                    let optionHTML='';
+
+                    for (let spec of data.specializations){
+                        optionHTML += '<option value="' + spec.id + '">' + spec.name + '</option>'
+                    }
+
+                    spec_select.innerHTML = optionHTML;
+
+                });
+            });
+        }
+    </script>
 </html>

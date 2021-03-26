@@ -1,5 +1,6 @@
 #import mysql.connector
 #from sqlalchemy import create_engine
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.engine import create_engine
 import pandas as pd
 import pymysql # pip install PyMySQL 
@@ -139,6 +140,13 @@ if __name__ == '__main__':
     else:
         print("Naah")
     #print(df)
+
+#Såhär borde "Spec" till routes se ut!
+
+#class Spec(db.Model):
+   # id = db.Column(db.Integer, primary_key=True)
+   # program = db.Column(db.String(2))
+   # name = db.Column(db.String(50))
 
     
 

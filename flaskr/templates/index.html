@@ -38,19 +38,17 @@ easyplan - stop struggle | Home
             <div class="explanation_details">
                 <form method="POST">
                     <select name="program_select" id="programselector">
-                        {% for name in program %}
-                        <option value="{{ data.name }}">{{ data.name }}</option>
+                        {% for name in programs %}
+                        <option value="{{ programs.id }}">{{ program_select.name }}</option>
                         {% endfor %} 
                       </select>
                 </form>
 
                 <form method="POST">
-                    <select id="specselector">
-                        <option value="0">Specialisering</option>
-                        <option value="1">Mekatronik</option>
-                        <option value="2">Energiteknik</option>
-                        <option value="2">Supply 'vi har så mtk att göra azz' management</option>
-                      </select>
+                    {{ form.csrf_token }}
+                    {{ form.program }}
+                    {{ form.spec }}
+                    <input type="submit">
                 </form>
             </div>
         </div>
@@ -95,95 +93,7 @@ easyplan - stop struggle | Home
 
     </div>
  
-    <!--
-<div id="contentbox">
-    <div id="wrapper_left">
-        <div id="title_left">
-            <h3 class="leftcont">Kurskoder</h3>
-            <p class="leftcont">Ange kurskoder för de kurser du har avklarat.</p>
-        </div>
 
-        
-    <div id="content_left">
-        <form method="POST">
-            <div id="formwrapper">
-                <div class="input-wrapper">
-                    <input type="text" name="field[]" class="textfield" placeholder="Kurskod" autocomplete="off">             
-                </div>
-
-                <div id="submitaddwrapper">
-                    <a href="javascript:void(0);" class="add-input" title="Add input"><button id="addRow" type="button" class="addbtn"><i class="far fa-plus-square"></i></button></a>
-                    <button type="submit" class="submitbtn" name="cmdsubmit" value="bar"><i class="far fa-paper-plane"></i></button>
-                </div>
-            </div>
-        </form>
-    </div>
-            
-     </div>
-
-     <div id="wrapper_right">
-        <h3 class="leftcont">Dina inskickade kurser:</h3>
-  
-        <p class="leftcont">
-            {% if data|length > 0%}
-            {% for key, value in data.items() %}
-            {{key}} : {{value}} 
-            <br>
-            {% endfor %}
-            {% endif %}
-        </p>
-     </div>
-    </div>
-    -->
-    <!--
-    <div id="explanationcontent">
-        <div id="explanationtext">
-        <h3 class="explanation">Here's how it works!</p>
-         </div>
-
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-pencil-alt fa-2x"></i></h3>
-            <h3 class="explanation">Fyll i kurslistan<br></h3>
-            <p class="explanation">Sök efter kurskoder och fyll i vilka kurser du har avklarat.</p>
-        </div>
-
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-check-square fa-2x"></i></h3>
-            <h3 class="explanation">Klicka i specialisering<br></h3>
-            <p class="explanation">Genom att klicka i din specialisering kan easyplan ta reda på
-                hur långt du är kommen i din utbildning och ge förslag på kurser att läsa.
-            </p>
-        </div>
-
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-hat-wizard fa-2x"></i></h3>
-            <h3 class="explanation">Låt easyplan göra sin magi<br></h3>
-            <p class="explanation">Klicka på kör eller knäpp ett enkelt slag på enter, easyplan kör igång
-                och räknar ut intressant data.
-            </p>
-        </div>
-
-        
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-chart-line fa-2x"></i></h3>
-            <h3 class="explanation">Grafisk illustration<br></h3>
-            <p class="explanation">Njut av förklarande diagram där du kan se vad du har kvar, 
-                hur långt du har kommit och vad du kan göra för att nå målet!</p>
-        </div>
-
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-share fa-2x"></i></h3>
-            <h3 class="explanation">Exportera eller dela<br></h3>
-            <p class="explanation">Exportera din data i en excelfil eller dela enkelt på sociala medier, mail eller messenger</p>
-        </div>
-
-        <div id="explanationbox">
-            <h3 class="explanation"><i class="fas fa-user-graduate fa-2x"></i></h3>
-            <h3 class="explanation">Examen<br></h3>
-            <p class="explanation">Genom att hela tiden hålla koll på din framgång blir det lätt att ta examen, se till att klara tentorna!</p>
-        </div>
-    </div>
-    --->
 </div>
 {% endblock %}
 
