@@ -19,7 +19,7 @@ class Registrator(FlaskForm):
     #    super(Registrator, self).__init__()
     #    self.dbConnection = dbConnection
 
-    def validate_email_address(self, email_adress_to_check):
+    def validate_email_address(self, email_address_to_check):
         condition = dbConnection.ifNew_UserEmail(email_adress_to_check.data)
         if not condition:
             raise ValidationError('Email address already in use')
@@ -33,9 +33,18 @@ class Registrator(FlaskForm):
                                                                                     ,DataRequired(message = "Please re-enter password")])
     #program = SelectField(label = 'Program', choices = programChoices, default='M')
     #specialisering = SelectField(label = 'Specialisering',  choices = specChoices, default='Mekatronik')
-    
+
 class loginForm(FlaskForm):
 
     email_address = StringField(label = 'Email Adress', validators = [Email(message = 'Please enter a valid email address'), DataRequired()])
     password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15, message = 'Password must be between %(min)d and %(max)d characters'),
                                                                 DataRequired( message = "Please enter a password")])
+
+class forgotPwForm(FlaskForm):
+
+    def validate_email_address(self, email_address_to_check):
+        dfInfo = dbConnection.getUserData()
+        dfInfo = dfInfo.loc[[dfInfo['userMail'] == email_address_to_check]]
+        if dfInfo.empty:
+            raise ValidationError('No such email address exists, please try again.')
+    email_address = StringField(label = 'Email Adress', validators = [Email(message = 'Please enter a valid email address'), DataRequired()])

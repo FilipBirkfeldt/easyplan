@@ -1,7 +1,7 @@
 from flaskr import app, dbConnection, bcrypt, login_manager
 from flask import render_template, url_for, redirect, flash, request
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
-from flaskr.forms import Registrator, specChoices, programChoices, loginForm
+from flaskr.forms import Registrator, specChoices, programChoices, loginForm, forgotPwForm
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
@@ -80,7 +80,10 @@ def logout():
 
 @app.route("/forgot", methods=["POST", "GET"])
 def forgot_page():
-    loginForm = Registrator()
+    loginForm = forgotPwForm()
+    if loginForm.errors != {}:
+        for err_msg in loginForm.errors.values():
+            flash(f'Error {err_msg}', category = 'danger')
     return render_template('forgotpw.html', form = loginForm)
 
 @login_manager.user_loader
