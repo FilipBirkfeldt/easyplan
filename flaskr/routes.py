@@ -1,21 +1,37 @@
 from flaskr import app, dbConnection, bcrypt, login_manager
-from flask import render_template, url_for, redirect, flash, request
+from flask import render_template, url_for, redirect, flash, request, jsonify
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
-from flaskr.forms import Registrator, specChoices, programChoices, loginForm, forgotPwForm
+
+from flaskr.forms import Registrator, specChoices, programChoices, loginForm, ProgramsForm, forgotPwForm
+
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
-    data = {}   
-    loginForm = Registrator()
+    programs=ProgramsForm()
+    programs.program.choices
+    programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
     if request.method == 'POST':
-        fullname = request.form.getlist('field[]')
-        data = getAllPointsDict('M', 'Mekatronik', fullname)
-        #return render_template('index.html', data = data, )
-        #send_data för att ladda ner excel filer t.ex.
-    return render_template('index.html', form = loginForm)
+        spec = Spec.query.filter_by(id=programs.spec.data).first()
+        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.name)
+    
+
+    return render_template('index.html', programs=programs)
+
+@app.route("/specialization/<program>")
+def specialization(program):
+    specializations = Spec.query.filter_by(program=program).all()
+
+    specializationArray = []
+
+    for spec in specializations:
+        specializationObj = {}
+        specializationObj['id'] = spec.id
+        specializationObj['name'] = spec.name
+        specializationArray.append(specializationObj)
+    return jsonify({'specializations' : specializationArray})
 
 
 @app.route("/about")

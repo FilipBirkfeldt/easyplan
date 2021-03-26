@@ -60,7 +60,7 @@ h1.menu {
     font-size: 1.75vh;
 }
 
-/* ---------------------- Code related to the first box *---------------------- */
+/* ---------------------- Code related to content of index *---------------------- */
 
 #container {
     max-width:66.6667%;
@@ -73,54 +73,198 @@ h1.menu {
     height: 9%;
     float: left;
     text-align:center;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
-#contentbox {
-    width: 960px;
-    height: 700px;
-    overflow: auto;
+#programcontainer{
+    width:100%;
+    height:50%;
+    float:left;
+    margin-top:5%;
+}
+
+#explanationfield{
+    position:relative;
+    z-index:2;
+    width:33.33%;
+    height:100%;
+    float:left;
+    background-color: #DADADA;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.explanation_title{
+    margin-top:10%;
+    margin-left:10%;
+    width:80%;
+    height:10%;
     float: left;
-    margin-left: 90px;
-    background: hsla(29, 92%, 70%, 1);
-    background: linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F9B16E", endColorstr="#F68080", GradientType=1 );
+}
+
+.explanation_text{
+    margin-left:10%;
+    margin-top:3%;
+    width:80%;
+    height:20%;
+    float: left;
+}
+
+.icons_for_success{
+    margin-left:10%;
+    width:80%;
+    height:15%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.icons_for_success div{
+    width:8vh;
+    height:8vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explanation_details{
+    margin-left:10%;
+    margin-top:3%;
+    width:80%;
+    height:20%;
+    float: left;
+}
+
+/* --- The drop down menu for program and spec ------*/
+
+select {
+    width:100%;
+    height:3.25vh;
+    margin-bottom:2%;
+    padding-left:2%;
+    float:left;
     border-radius:5px;
+    background-color: #202020;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:#EAEAEA;
+    font-weight:100;
+    font-size:1vh;
+  }
+
+  .select--disabled {
+    width:100%;
+    height:3.25vh;
+    margin-bottom:2%;
+    padding-left:2%;
+    float:left;
+    border-radius:5px;
+    background-color: #202020;
+    border: none;
+    outline: none;
+    cursor: not-allowed;
+    color:#949494;
+    font-weight:100;
+    font-size:1vh;
+  }
+
+/* --- The actual program and calculator ----*/
+#programfield{
+    width:66.66%;
+    height:100%;
+    background-color: #e2e2e2;
+    border-radius: 0px 10px 10px 0px;
+    float:right;
 }
 
-#wrapper_left{
-    width: 480px;
-    height: 700px;
-    float: left;
+#programfield_content{
+    width:90%;
+    height:70%;
+    float:left;
+    margin-left:5%;
+    margin-top:5%;
+    margin-bottom:5%;
+    overflow:auto;
 }
 
-#title_left{
-    width: 480px;
-    height: 100px;
+.pf_title{
+    width:100%;
+    height:10%;
+    float:left;
+}
+
+table.pf{
+    width: 100%;
+    height: 90%;
     float: left;
+    border-collapse: collapse;
+}
+
+td {
+    border:none;
+  }
+
+tr.head{
+    text-align: left;
+    border-bottom: 1px solid #202020;
+}
+
+tr.content{
+    height:10%;
+}
+
+th.th1{
+    width:25%;
+}
+th.th2{
+    width:50%;
+}
+th.th3{
+    width:6.25%;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+}
+th.th4{
+    width:18.75%;
+    text-align: center;
 }
 
-#content_left{
-    width: 480px;
-    height: 600px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+td.td1{
+    width:25%;
+}
+td.td2{
+    width:50%;
+}
+td.td3{
+    width:6.25%;
+    text-align: center;
+}
+td.td4{
+    width:18.75%;
+    text-align: center;
 }
 
-#content_right{
-    width: 480px;
-    height: 500px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#programfield_footer{
+    width:100%;
+    height:10%;
+    background-color: #e2e2e2;
+    float:right;
+}
+
+.btnsubmitprgm{
+    width:15%;
+    height:3.25vh;
+    float:right;
+    border-radius:5px;
+    background-color: #202020;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:#EAEAEA;
+    font-weight:100;
+    font-size:1vh;
+    margin-right:5%;
+    font-family: Roboto;
 }
 
 /* ---------------------- Code related to the explanation *---------------------- */
@@ -156,116 +300,6 @@ a:link, a:visited, a:hover, a:active {
     color: #202020;
   }
 
-
-
-
-/* ------------------ Code related to the main program *------------------ */
-#formwrapper{
-    width:300px;
-    height:500px;
-    float: left;
-}
-.input-wrapper{
-    width:300px;
-    height:32px;
-    background-color: #EBEBEB
-}
-
-.textfieldwrapper{
-    width:225px;
-    height:32px;
-    margin-top:3px;
-    float:left;
-    background-color: #EBEBEB;
-}
-
-.textfield {
-    width:210px;
-    height:30px;
-    margin-left: 10px;
-    float: left;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    transition-duration:0.08s;
-    border: none;
-    outline: none;
-    background-color: #EBEBEB;
-    font-family: 'Open Sans'
-}
-
-.rmvbtn{
-    width:75px;
-    height:32px;
-    margin-top:3px;
-    float: left;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    background-color: #EBEBEB;
-    transition-duration:0.08s;
-    border: none;
-    outline: none;
-    color:#202020;
-    border-left: 1px solid #CCCCCC;
-}
-
-.rmvbtn:hover{
-    background-color: #DADADA;
-    transition-duration:0.08s;
-}
-
-.submitaddwrapper{
-    width:300px;
-    height:32px;
-    float: left;
-}
-
-
-.addbtn{
-    float: left;
-    margin-top:3px;
-    width:148.5px;
-    height:32px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    transition-duration:0.08s;
-    background-color: #EBEBEB;
-    border: none;
-    outline: none;
-    color:#202020;
-}
-
-.addbtn:hover{
-    background-color: #DADADA;
-    transition-duration:0.08s;
-}
-
-.submitbtn{
-    margin-top:3px;
-    margin-left:3px;
-    float: left;
-    width:148.5px;
-    height:32px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    transition-duration:0.08s;
-    background-color: #EBEBEB;
-    border: none;
-    outline: none;
-    color:#202020;
-    }
-
-    .submitbtn:hover{
-        background-color: #DADADA;
-        transition-duration:0.08s;
-    }
 /* ---------------------- Code related to the menu *---------------------- */
 
 /* Dropdown Button */
@@ -370,32 +404,46 @@ a:link, a:visited, a:hover, a:active {
 
 /* ---------------------- Code related to text and fonts *---------------------- */
 
+
+/*------ "stop struggle" ----*/
 h2.textboxtitle{
     font-size:2vh;
     text-align: center;
     color:#202020;
 }
 
-h3.explanation{
-    size:40px;
-    text-align: center;
-    margin-top:50px;
-    color:#202020;
-
-}
 p.explanation{
     font-size:1.25vh;
     text-align:center;
     color:#202020;
 }
 
-h3.leftcont{
-    size:40px;
-    text-align: center;
-    margin-top:50px;
+/*------ Calculating program ----*/
+h2.expln_title{
+    font-weight:100;
+    font-size:1.75vh;
+    text-align: left;
     color:#202020;
+    text-decoration: underline;
+    text-underline-offset: 0.8vh;
+    text-decoration-thickness: 1px;
 
 }
+
+p.expln_text{
+    font-weight:100;
+    font-size:0.95vh;
+    text-align: left;
+    color:#202020;
+}
+
+h2.pf{
+    font-weight:100;
+    font-size:1.75vh;
+    text-align: left;
+    color:#202020;
+}
+/*------ Login site ----*/
 p.leftcont{
     size: 10px;
     text-align:center;
@@ -578,8 +626,8 @@ h1.login{
     width:48%;
     height:8%;
     float:left;
-    margin-left:1%;
-    margin-right:1%;
+    margin-left:10;
+    margin-right:10;
 }
 
 
