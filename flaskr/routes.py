@@ -12,9 +12,9 @@ from flask_login import login_user, logout_user, login_required
 def index():
     programs=ProgramsForm()
     programs.program.choices
-    programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
+    #programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
     if request.method == 'POST':
-        spec = Spec.query.filter_by(id=programs.spec.data).first()
+        #spec = Spec.query.filter_by(id=programs.spec.data).first()
         return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.name)
     
 
@@ -22,7 +22,7 @@ def index():
 
 @app.route("/specialization/<program>")
 def specialization(program):
-    specializations = Spec.query.filter_by(program=program).all()
+    #specializations = Spec.query.filter_by(program=program).all()
 
     specializationArray = []
 

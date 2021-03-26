@@ -40,7 +40,6 @@ class loginForm(FlaskForm):
     password = PasswordField(label = 'Password', validators = [Length(min = 3, max = 15, message = 'Password must be between %(min)d and %(max)d characters'),
                                                                 DataRequired( message = "Please enter a password")])
 
-<<<<<<< HEAD
 class forgotPwForm(FlaskForm):
 
     def validate_email_address(self, email_address_to_check):
@@ -49,11 +48,9 @@ class forgotPwForm(FlaskForm):
         if dfInfo.empty:
             raise ValidationError('No such email address exists, please try again.')
     email_address = StringField(label = 'Email Adress', validators = [Email(message = 'Please enter a valid email address'), DataRequired()])
-=======
 
 class ProgramsForm(FlaskForm):
     program = SelectField('Program', choices=[('D','Datateknik'), ('W','Ekosystemteknik'), ('E','Elektroteknik'), ('I','Industriell Ekonomi'), ('K','Kemiteknik'), ('L','Lantmäteri'),
                                                 ('M','Maskinteknik'), ('TD','Maskinteknik - Teknisk Design'), ('BME','Medicin och Teknik'), ('F','Teknisk Fysik'), ('Pi','Teknisk Matematik'), 
                                                     ('N','Teknisk nanovetenskap'), ('V','Väg- och vattenbyggnad')])
     spec = SelectField('Specialization', choices=[])
->>>>>>> d448e77d379ca2fdb7a26c2f15408120082a764a
