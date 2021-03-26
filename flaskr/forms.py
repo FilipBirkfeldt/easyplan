@@ -42,7 +42,7 @@ class loginForm(FlaskForm):
 
 
 class ProgramsForm(FlaskForm):
-    program = SelectField('Program', choices=[('D','Datateknik'), ('W','Ekosystemteknik'), ('E','Elektroteknik'), ('I','Industriell Ekonomi'), ('K','Kemiteknik'), ('L','Lantmäteri'),
+    program = SelectField('Program', choices=[('B','Bioteknik'), ('D','Datateknik'), ('W','Ekosystemteknik'), ('E','Elektroteknik'), ('C','Informations- och kommunikationsteknik'), ('I','Industriell Ekonomi'), ('K','Kemiteknik'), ('L','Lantmäteri'),
                                                 ('M','Maskinteknik'), ('TD','Maskinteknik - Teknisk Design'), ('BME','Medicin och Teknik'), ('F','Teknisk Fysik'), ('Pi','Teknisk Matematik'), 
                                                     ('N','Teknisk nanovetenskap'), ('V','Väg- och vattenbyggnad')])
     spec = SelectField('Specialization', choices=[])

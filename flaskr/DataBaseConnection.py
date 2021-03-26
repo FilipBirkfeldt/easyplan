@@ -139,6 +139,15 @@ if __name__ == '__main__':
         print(type(user_to_create.password))
     else:
         print("Naah")
+
+if name == 'main':
+    dbConnection = DataBaseConnection()
+    specializations = dbConnection.readAllData()
+    specializations = specializations['Typ'].unique()
+    print(specializations)
+    specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
+    specializationArray = [x for x in specializations if x in specList]
+    print(specializationArray)
     #print(df)
 
 #Såhär borde "Spec" till routes se ut!

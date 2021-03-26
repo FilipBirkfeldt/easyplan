@@ -4,32 +4,40 @@ from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
 from flaskr.forms import Registrator, specChoices, programChoices, loginForm, ProgramsForm
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
+specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
     programs=ProgramsForm()
     programs.program.choices
-    programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
+    #programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
     if request.method == 'POST':
-        spec = Spec.query.filter_by(id=programs.spec.data).first()
-        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.name)
+        spec = dbConnection.readAllData()
+        spec = spec.loc[spec['Typ'] == programs.spec.data]
+        #spec = Spec.query.filter_by(id=programs.spec.data).first()
+        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.Typ)
     
 
     return render_template('index.html', programs=programs)
 
 @app.route("/specialization/<program>")
 def specialization(program):
-    specializations = Spec.query.filter_by(program=program).all()
+    #specializations = Spec.query.filter_by(program=prog ram).all()
+    specializations = dbConnection.readAllData()
+    specializations = specialization['Typ'].unique()
+    specializationArray = [x for x in specializations if x in specList]
 
-    specializationArray = []
+    #specializationArray = []
 
-    for spec in specializations:
-        specializationObj = {}
-        specializationObj['id'] = spec.id
-        specializationObj['name'] = spec.name
-        specializationArray.append(specializationObj)
+    #for spec in specializations:
+    #    specializationObj = {}
+    #    specializationObj['id'] = spec.id
+    #    specializationObj['name'] = spec.name
+    #    specializationArray.append(specializationObj)
+    #return jsonify({'specializations' : specializationArray})
     return jsonify({'specializations' : specializationArray})
+
 
 
 @app.route("/about")

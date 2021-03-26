@@ -37,17 +37,9 @@ easyplan - stop struggle | Home
             </div>
             <div class="explanation_details">
                 <form method="POST">
-                    <select name="program_select" id="programselector">
-                        {% for name in programs %}
-                        <option value="{{ programs.id }}">{{ program_select.name }}</option>
-                        {% endfor %} 
-                      </select>
-                </form>
-
-                <form method="POST">
-                    {{ form.csrf_token }}
-                    {{ form.program }}
-                    {{ form.spec }}
+                    {{ programs.hidden_tag }}
+                    {{ programs.program }}
+                    {{ programs.spec }}
                     <input type="submit">
                 </form>
             </div>
