@@ -38,6 +38,9 @@ easyplan - stop struggle | Home
             <div class="explanation_details">
                 <form method="POST">
                     {{ programs.hidden_tag }}
+
+                <form method="POST">
+                    {{ programs.hidden_tag() }}
                     {{ programs.program }}
                     {{ programs.spec }}
                     <input type="submit">

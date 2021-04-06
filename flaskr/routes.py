@@ -1,7 +1,9 @@
 from flaskr import app, dbConnection, bcrypt, login_manager
 from flask import render_template, url_for, redirect, flash, request, jsonify
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
-from flaskr.forms import Registrator, specChoices, programChoices, loginForm, ProgramsForm
+
+from flaskr.forms import Registrator, specChoices, programChoices, loginForm, ProgramsForm, forgotPwForm
+
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
@@ -17,6 +19,8 @@ def index():
         spec = spec.loc[spec['Typ'] == programs.spec.data]
         #spec = Spec.query.filter_by(id=programs.spec.data).first()
         return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.Typ)
+        #spec = Spec.query.filter_by(id=programs.spec.data).first()
+        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.name)
     
 
     return render_template('index.html', programs=programs)
@@ -27,6 +31,7 @@ def specialization(program):
     specializations = dbConnection.readAllData()
     specializations = specialization['Typ'].unique()
     specializationArray = [x for x in specializations if x in specList]
+    #specializations = Spec.query.filter_by(program=program).all()
 
     #specializationArray = []
 
@@ -102,7 +107,10 @@ def logout():
 
 @app.route("/forgot", methods=["POST", "GET"])
 def forgot_page():
-    loginForm = Registrator()
+    loginForm = forgotPwForm()
+    if loginForm.errors != {}:
+        for err_msg in loginForm.errors.values():
+            flash(f'Error {err_msg}', category = 'danger')
     return render_template('forgotpw.html', form = loginForm)
 
 @login_manager.user_loader

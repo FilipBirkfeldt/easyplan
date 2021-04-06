@@ -100,6 +100,33 @@ class DataBaseConnection():
             'specialisering' : df['specialisering'].values
         })
 
+    def getSpecis_from_Program(self, program:str) -> list: 
+        "Returns a list of the specializations given the program"
+
+        # Den här funktionen suger så jävla mycket, skulle behöva göra om table_name = 'specializations'
+        # för varje cell så liugger specialitionerna som arrays i
+
+        table_name = 'specializations'
+        df = pd.read_sql("SELECT " + program +" FROM " + table_name, self.dbConnection)
+        values = df[program].apply(lambda x:len(x)>0)
+        speci = df[values]
+        list_spez = list()
+        [list_spez.append(x[0]) for x in speci.values]
+        return speci
+
+if __name__ == '__main__':
+    dbConnection = DataBaseConnection()
+    dbConnection.getSpecis_from_Program('M')
+    """df = dbConnection.getUserData()
+    df = df.loc[df['userMail'] == 'test@test.test']
+    user_to_create = User()
+    user_to_create.create_user(df)
+    if not df.empty:
+        print(type(user_to_create.password))
+    else:
+        print("Naah")
+    #print(df)"""
+
 class User(DataBaseConnection):
     def __init__(self):
         self.userId = id
@@ -129,33 +156,6 @@ class User(DataBaseConnection):
     def is_anonymous(self):
         return False
     
-if __name__ == '__main__':
-    dbConnection = DataBaseConnection()
-    df = dbConnection.getUserData()
-    df = df.loc[df['userMail'] == 'test@test.test']
-    user_to_create = User()
-    user_to_create.create_user(df)
-    if not df.empty:
-        print(type(user_to_create.password))
-    else:
-        print("Naah")
-
-if name == 'main':
-    dbConnection = DataBaseConnection()
-    specializations = dbConnection.readAllData()
-    specializations = specializations['Typ'].unique()
-    print(specializations)
-    specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
-    specializationArray = [x for x in specializations if x in specList]
-    print(specializationArray)
-    #print(df)
-
-#Såhär borde "Spec" till routes se ut!
-
-#class Spec(db.Model):
-   # id = db.Column(db.Integer, primary_key=True)
-   # program = db.Column(db.String(2))
-   # name = db.Column(db.String(50))
 
     
 
