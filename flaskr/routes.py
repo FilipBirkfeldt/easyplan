@@ -6,33 +6,35 @@ from flaskr.forms import Registrator, specChoices, programChoices, loginForm, Pr
 
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
-#from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
+import pandas as pd
+specs = {'1':  'Valfri_M', '2' : 'Mekatronik', '3': 'Energi'}
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
     programs=ProgramsForm()
     programs.program.choices
-    #programs.spec.choices = [(spec.id, spec.name) for spec in Spec.query.filter_by(program='M').all()]
+    #programs.spec.choices = [(spec.id, spec.name) for spec in dbConnection.getSpecis_from_Program(program='M')]
     if request.method == 'POST':
-        #spec = Spec.query.filter_by(id=programs.spec.data).first()
-        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec.name)
-    
+        spec = dbConnection.getSpecis_from_Program(program=programs.program.data)
+        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec)
+
 
     return render_template('index.html', programs=programs)
 
 @app.route("/specialization/<program>")
 def specialization(program):
-    #specializations = Spec.query.filter_by(program=program).all()
+    specializations = dbConnection.getSpecis_from_Program(program=program)
 
     specializationArray = []
 
-    for spec in specializations:
+    for idx, key in enumerate(specializations):
         specializationObj = {}
-        specializationObj['id'] = spec.id
-        specializationObj['name'] = spec.name
+        specializationObj['id'] = idx
+        specializationObj['name'] = key
         specializationArray.append(specializationObj)
+    print(specializationArray)
     return jsonify({'specializations' : specializationArray})
-
+    # [{ID:NAME}, {ID:NAME}, {ID:NAME}]
 
 @app.route("/about")
 def about_page():
@@ -51,7 +53,7 @@ def register_page():
     registerForm = Registrator()
     if registerForm.validate_on_submit():
 
-        condition = dbConnection.insertNewUser(6, registerForm.email_address.data, 
+        condition = dbConnection.insertNewUser(5, registerForm.email_address.data, 
                                                 bcrypt.generate_password_hash(registerForm.password.data).decode('utf-8'),
                                                 registerForm.firstName.data,
                                                 'M',

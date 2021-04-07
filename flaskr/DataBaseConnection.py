@@ -112,11 +112,11 @@ class DataBaseConnection():
         speci = df[values]
         list_spez = list()
         [list_spez.append(x[0]) for x in speci.values]
-        return speci
+        return list_spez
 
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
-    dbConnection.getSpecis_from_Program('M')
+    print(dbConnection.readAllData())
     """df = dbConnection.getUserData()
     df = df.loc[df['userMail'] == 'test@test.test']
     user_to_create = User()
