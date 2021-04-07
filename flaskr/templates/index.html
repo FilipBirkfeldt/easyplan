@@ -37,8 +37,6 @@ easyplan - stop struggle | Home
                 </p>
             </div>
             <div class="explanation_details">
-                <form method="POST">
-                    {{ programs.hidden_tag }}
 
                 <form method="POST">
                     {{ programs.hidden_tag() }}
@@ -78,7 +76,14 @@ easyplan - stop struggle | Home
                       </tr>
 
                 </table>
-                
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             </div>
             </form>
 

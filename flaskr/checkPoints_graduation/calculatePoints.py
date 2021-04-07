@@ -75,11 +75,6 @@ def getPerson(M:str, courseString:str)->dict:
     personDict = addPointsLeft_toDict(personDict)
     return personDict
     
-stringInput = 'MVKN85, EIEN20'
-hej = getPerson('M', stringInput)
-print()
-for key in hej.keys():
-     print(key,': ', hej.get(key))
 
 # TODO: 
 def addCourses(listCourse:list, df:pd.DataFrame())->pd.DataFrame(): 

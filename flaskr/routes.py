@@ -8,41 +8,40 @@ from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 
 import pandas as pd
-specs = {'1':  'Valfri_M', '2' : 'Mekatronik', '3': 'Energi'}
-specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
+#specs = {'1':  'Valfri_M', '2' : 'Mekatronik', '3': 'Energi'}
+#specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
 #from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
-    programs=ProgramsForm()
-    programs.program.choices
-    #programs.spec.choices = [(spec.id, spec.name) for spec in dbConnection.getSpecis_from_Program(program='M')]
-    if request.method == 'POST':
-        spec = dbConnection.getSpecis_from_Program(program=programs.program.data)
-        return 'Program: {}, Specialization: {}'.format(programs.program.data, spec)
+    programsForm=ProgramsForm()
+    programsForm.spec.choices = dbConnection.getSpecis_from_Program('B')
+    if  programsForm.validate_on_submit():#request.method == 'POST':
+        spec = dbConnection.getSpecis_from_Program(program=programsForm.program.data)
+        if programsForm.errors != {}:
+            for err_msg in programsForm.errors.values():
+             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
+
+        return 'Program: {}, Specialization: {}'.format(programsForm.program.data, spec)
 
 
-    return render_template('index.html', programs=programs)
+    return render_template('index.html', programs=programsForm)
 
 @app.route("/specialization/<program>")
 def specialization(program):
-    #specializations = Spec.query.filter_by(program=prog ram).all()
-    specializations = dbConnection.readAllData()
-    specializations = specialization['Typ'].unique()
-    specializationArray = [x for x in specializations if x in specList]
-    #specializations = Spec.query.filter_by(program=program).all()
 
-    #specializationArray = []
+    specList = dbConnection.getSpecis_from_Program(program)
 
-    for idx, key in enumerate(specializations):
+    specializationArray = []
+
+    for idx, key in enumerate(specList):
         specializationObj = {}
         specializationObj['id'] = idx
         specializationObj['name'] = key
         specializationArray.append(specializationObj)
     print(specializationArray)
     return jsonify({'specializations' : specializationArray})
-    # [{ID:NAME}, {ID:NAME}, {ID:NAME}]
 
 
 @app.route("/about")
