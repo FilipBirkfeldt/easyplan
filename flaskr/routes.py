@@ -8,22 +8,15 @@ from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
 
 import pandas as pd
-#specs = {'1':  'Valfri_M', '2' : 'Mekatronik', '3': 'Energi'}
-#specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
-#from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
 
-#from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
     programsForm=ProgramsForm()
     programsForm.spec.choices = dbConnection.getSpecis_from_Program('B')
-    if  programsForm.validate_on_submit():#request.method == 'POST':
+    if  request.method == 'POST':
         spec = dbConnection.getSpecis_from_Program(program=programsForm.program.data)
-        if programsForm.errors != {}:
-            for err_msg in programsForm.errors.values():
-             flash(f'There was an error with creating a user {err_msg}', category = 'danger')
 
-        return 'Program: {}, Specialization: {}'.format(programsForm.program.data, spec)
+        return f'Program: {programsForm.program.data}, Specialization: {spec}, Error_MSG {programsForm.errors.values()}'
 
 
     return render_template('index.html', programs=programsForm)

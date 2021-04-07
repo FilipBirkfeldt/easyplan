@@ -116,7 +116,10 @@ class DataBaseConnection():
 
 if __name__ == '__main__':
     dbConnection = DataBaseConnection()
-    print(dbConnection.readAllData())
+    courseList = dbConnection.readAllData()
+    x = courseList[courseList['Typ'] == 'Mekatronik'][['Kursnamn', 'Kurskod', 'Poang']].values
+    print( type(x), '\n' , x, '\n' , x[1])
+   
     """df = dbConnection.getUserData()
     df = df.loc[df['userMail'] == 'test@test.test']
     user_to_create = User()
