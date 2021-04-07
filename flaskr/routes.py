@@ -6,8 +6,12 @@ from flaskr.forms import Registrator, specChoices, programChoices, loginForm, Pr
 
 from flaskr.DataBaseConnection import User
 from flask_login import login_user, logout_user, login_required
+
 import pandas as pd
 specs = {'1':  'Valfri_M', '2' : 'Mekatronik', '3': 'Energi'}
+specList = ['Energiteknik', 'Logistik', 'Mekatronik', 'Valfri_M']
+#from checkPoints_graduation import DataBaseConnection, pandas, dbConnection
+
 #from flaskr.forms import courseField
 @app.route("/", methods =['GET', 'POST'])
 def index():
@@ -23,9 +27,13 @@ def index():
 
 @app.route("/specialization/<program>")
 def specialization(program):
-    specializations = dbConnection.getSpecis_from_Program(program=program)
+    #specializations = Spec.query.filter_by(program=prog ram).all()
+    specializations = dbConnection.readAllData()
+    specializations = specialization['Typ'].unique()
+    specializationArray = [x for x in specializations if x in specList]
+    #specializations = Spec.query.filter_by(program=program).all()
 
-    specializationArray = []
+    #specializationArray = []
 
     for idx, key in enumerate(specializations):
         specializationObj = {}
@@ -35,6 +43,7 @@ def specialization(program):
     print(specializationArray)
     return jsonify({'specializations' : specializationArray})
     # [{ID:NAME}, {ID:NAME}, {ID:NAME}]
+
 
 @app.route("/about")
 def about_page():
