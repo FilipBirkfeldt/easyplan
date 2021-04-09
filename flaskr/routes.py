@@ -1,5 +1,5 @@
 from flaskr import app, dbConnection, bcrypt, login_manager
-from flask import render_template, url_for, redirect, flash, request, jsonify
+from flask import render_template, url_for, redirect, flash, request, jsonify, Markup
 from flaskr.checkPoints_graduation.calculatePoints import getAllPointsDict
 
 from flaskr.forms import Registrator, specChoices, programChoices, loginForm, ProgramsForm, forgotPwForm
@@ -67,6 +67,11 @@ def specialization(program):
     print(specializationArray)
     return jsonify({'specializations' : specializationArray})
 
+
+@app.route("/results", methods=["GET", "POST"])
+def results():
+
+    return render_template('results.html')
 
 @app.route("/about")
 def about_page():

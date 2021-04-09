@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}
+easyplan - stop struggle | Results
+{% endblock %}
+
+{% block content %}
+<div id="container">
+    <div id="textbox">
+        <div id="textbox-item">
+        <h2 class="textboxtitle">Here are your results!</h2>
+        </div>
+    </div>
+
+    <div id="resultscontainer">
+        <div id="informationfield">
+
+        </div>
+        <div id="resultfield">
+            <div class="completefield1">
+                <canvas id="hpexam"></canvas>
+            </div>
+
+            <div class="completefield2">
+                <canvas id="hpspec"></canvas>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+
+<script>
+var outer_labels = ['Avklarade poäng inom program', 'Kvarvarande poäng inom program'];
+var inner_labels = ['Varav grundblock', 'Varav Spec','Kvarvarande poäng'];
+
+var config = {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: [242,(300-242)],
+      backgroundColor: ['#6CC95D', 'transparent'],
+      label: 'Outer Dataset',
+      labels: outer_labels
+    }, {
+      data: [180, (242-180), (300-180-(242-180))],
+      backgroundColor: ['#87CF4A', '#A2D638', 'transparent'],
+      label: 'Inner Dataset',
+      labels: inner_labels
+    }],
+    labels: outer_labels.concat(inner_labels)
+  },
+  options: {
+    maintainAspectRatio:false,
+    legend: {
+      position: 'left',
+      labels: {
+        generateLabels: () => {
+          let labels = [];
+          config.data.datasets.forEach((ds, iDs) => labels = labels.concat(ds.labels.map((l, iLabel) => ({
+            datasetIndex: iDs,
+            labelIndex: iLabel,
+            text: l,
+            fillStyle: ds.backgroundColor[iLabel],
+            hidden: chart ? chart.getDatasetMeta(iDs).data[iLabel].hidden : false,
+            strokeStyle: '#EAEAEA',
+          }))));
+          return labels;
+        }
+      },
+      
+      onClick: (event, legendItem) => {
+        return false;
+      }
+    },
+    tooltips: {
+      callbacks: {
+        label: (tooltipItem, data) => {
+          let dataset = data.datasets[tooltipItem.datasetIndex];
+          let index = tooltipItem.index;
+          return dataset.labels[index] + ": " + dataset.data[index];
+        }
+      }
+    }
+  }
+};
+
+var chart = new Chart('hpexam', config);
+</script>
+
+
+
+<script>
+    /* -- Specialisation with 2 datasets --- */
+var outer_labels = ['Avklarade poäng inom specialisering', 'Kvarvarande poäng, specialisering'];
+var inner_labels = ['Varav inom spec', 'Varav valfria kurser inom program', 'varav externt valfria kurser'];
+
+var config = {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: [60,30],
+      backgroundColor: ['#F57E4A', 'transparent'],
+      label: 'Outer Dataset',
+      labels: outer_labels
+    }, {
+      data: [35, 15, 10, 30],
+      backgroundColor: ['#F68938', '#F69426', '#F79E14' ,'transparent'],
+      label: 'Inner Dataset',
+      labels: inner_labels
+    }],
+    labels: outer_labels.concat(inner_labels)
+  },
+  options: {
+    maintainAspectRatio:false,
+    legend: {
+      position: 'left',
+      labels: {
+        generateLabels: () => {
+          let labels = [];
+          config.data.datasets.forEach((ds, iDs) => labels = labels.concat(ds.labels.map((l, iLabel) => ({
+            datasetIndex: iDs,
+            labelIndex: iLabel,
+            text: l,
+            fillStyle: ds.backgroundColor[iLabel],
+            hidden: chart ? chart.getDatasetMeta(iDs).data[iLabel].hidden : false,
+            strokeStyle: '#EAEAEA'
+          }))));
+          return labels;
+        }
+      },
+      
+      onClick: (event, legendItem) => {
+        return false;
+      }
+    },
+    tooltips: {
+      callbacks: {
+        label: (tooltipItem, data) => {
+          let dataset = data.datasets[tooltipItem.datasetIndex];
+          let index = tooltipItem.index;
+          return dataset.labels[index] + ": " + dataset.data[index];
+        }
+      }
+    }
+  }
+};
+
+var chart = new Chart('hpspec', config);
+</script>
+
+{% endblock %}
+

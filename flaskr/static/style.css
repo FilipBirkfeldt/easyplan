@@ -287,30 +287,54 @@ td.td3{
     font-family: Roboto;
 }
 
-/* ---------------------- Code related to the explanation *---------------------- */
-#explanationcontent {
-    width: 960px;
-    height: 800px;
-    float: left;
-    margin-left: 90px;
-    margin-top:50px;
+/* ---------------------- Code related to the results *---------------------- */
+#resultscontainer{
+    width:100%;
+    height:35em;
+    float:left;
+    margin-top:5%;
+    overflow:auto;
 }
-#explanationtext{
-    width: 960px;
-    height: 100px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#informationfield{
+    width: 50%;
+    height:100%;
+    background-color: #e2e2e2;
+    border-radius: 10px 0px 0px 10px;
+    float:left;
+    overflow:auto;
 }
-#explanationbox{
-    width: 250px;
-    height: 300px;
-    float: left;
-    margin-bottom: 15px;
-    margin-left: 52.5px;
-    border-radius: 5px;
+#resultfield{
+    width: 50%;
+    height:100%;
+    background-color: #e2e2e2;
+    border-radius: 0px 10px 10px 0px;
+    float:right;
+    overflow:auto;
+
 }
+.completefield1{
+    width: 100%;
+    height:45%;
+    float:left;
+    overflow:auto;
+    align-self: flex-start;
+    margin-bottom:9%;
+
+}
+.completefield2{
+    width: 100%;
+    height:45%;
+    float:left;
+    overflow:auto;
+
+}
+
+.Mylegend { list-style: none; }
+
+.Mylegend li { float: left; margin-right: 10px; }
+
+.Mylegend span
+{ border: 1px solid #ccc; float: left; width: 15px; height: 12px; margin: 2px; }
 
 /* ---------------------- footer ----------------------*/
 
