@@ -53,7 +53,7 @@ def index():
     return render_template('index.html', programs=programsForm)
 
 @app.route("/specialization/<program>")
-def specialization(program):
+def specialization(program):ç
 
     specList = dbConnection.getSpecis_from_Program(program)
 
