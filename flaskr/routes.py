@@ -14,10 +14,41 @@ def index():
     programsForm=ProgramsForm()
     programsForm.spec.choices = dbConnection.getSpecis_from_Program('B')
     if  request.method == 'POST':
-        spec = dbConnection.getSpecis_from_Program(program=programsForm.program.data)
+        #spec = dbConnection.getSpecis_from_Program(program=programsForm.program.data)
+        #return f'Program: {programsForm.program.data}, Specialization: {spec}, Error_MSG {programsForm.errors.values()}'
+        courseList = dbConnection.readAllData()
+        y1List = courseList[courseList['Typ'] == '1'][['Kursnamn', 'Kurskod', 'Poang']].values
+        y2List = courseList[courseList['Typ'] == '2'][['Kursnamn', 'Kurskod', 'Poang']].values
+        y3List = courseList[courseList['Typ'] == '3'][['Kursnamn', 'Kurskod', 'Poang']].values
+        specList = courseList[courseList['Typ'] == 'Energiteknik'][['Kursnamn', 'Kurskod', 'Poang']].values
+        items_spec = {1: {}}
+        items_y1 = {1: {}}
+        items_y2 = {1: {}}
+        items_y3 = {1: {}}
+        for i in range(len(specList)):
+            items_spec[i] = {}
+            items_spec[i]['coursename'] = specList[i][0]
+            items_spec[i]['code'] = specList[i][1]
+            items_spec[i]['credits'] = specList[i][2]
 
-        return f'Program: {programsForm.program.data}, Specialization: {spec}, Error_MSG {programsForm.errors.values()}'
-
+        for i in range(len(y1List)):
+            items_y1[i] = {}
+            items_y1[i]['coursename'] = y1List[i][0]
+            items_y1[i]['code'] = y1List[i][1]
+            items_y1[i]['credits'] = y1List[i][2]
+        for i in range(len(y2List)):
+            items_y2[i] = {}
+            items_y2[i]['coursename'] = y2List[i][0]
+            items_y2[i]['code'] = y2List[i][1]
+            items_y2[i]['credits'] = y2List[i][2]
+        for i in range(len(y3List)):
+            items_y3[i] = {}
+            items_y3[i]['coursename'] = y3List[i][0]
+            items_y3[i]['code'] = y3List[i][1]
+            items_y3[i]['credits'] = y3List[i][2]
+        
+        return render_template('index.html' ,items_spec=items_spec, items_y1=items_y1, 
+        items_y2=items_y2, items_y3=items_y3 ,programs=programsForm)
 
     return render_template('index.html', programs=programsForm)
 

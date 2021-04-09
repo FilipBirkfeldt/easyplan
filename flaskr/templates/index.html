@@ -7,8 +7,12 @@ easyplan - stop struggle | Home
 {% block content %}
 <div id="container">
     <div id="textbox">
+        <div id="textbox-item">
         <h2 class="textboxtitle">Stop struggle!</h2>
+        </div>
+        <div id="textbox-item">
         <p class="explanation">Plan your courses and make sure your personal study plan adds up, with ease.</p>
+        </div>
     </div>
 
     <div id="programcontainer">
@@ -42,7 +46,7 @@ easyplan - stop struggle | Home
                     {{ programs.hidden_tag() }}
                     {{ programs.program }}
                     {{ programs.spec }}
-                    <input type="submit">
+                    <button type="submit" class="btnsubmitspec">Submit</button>
                 </form>
             </div>
         </div>
@@ -58,24 +62,99 @@ easyplan - stop struggle | Home
                         <th class="th1">Course Code</th>
                         <th class="th2">Course Name</th>
                         <th class="th3">Credits</th>
-                        <th class="th4">Completed</th>
+                        <th class="th3">Grade</th>
+                        <th class="th3">Completed</th>
                     </tr>
-
+                    {% for i in items_y1 %}
                     <tr class="content">
-                        <td class="td1">MVKN50</td>
-                        <td class="td2">Introduction to Combustion Engines</td>
-                        <td class="td3">7.5</td>
-                        <td class="td4"><input type="checkbox" checked="checked"></td>
+                        <td class="td1">{{items_y1[i]['code']}}</td>
+                        <td class="td2">{{items_y1[i]['coursename']}}</td>
+                        <td class="td3">{{items_y1[i]['credits']}}</td>
+                        <td class="td3"><input type="text" class="grade" onkeypress='return event.charCode >= 51 && event.charCode <= 53 
+                            || event.charCode == 71 || event.charCode == 103
+                            || event.charCode == 85 || event.charCode == 117'></td>
+                        <td class="td3"><input type="checkbox" checked="checked"></td>
                       </tr>
-
-                      <tr class="content">
-                        <td class="td1">MVKN50</td>
-                        <td class="td2">Introduction to Combustion Engines</td>
-                        <td class="td3">7.5</td>
-                        <td class="td4"><input type="checkbox" checked="checked"></td>
-                      </tr>
+                    {% endfor %}
 
                 </table>
+
+                <div class="pf_title">
+                    <h2 class="pf">Study year 2</h2>
+                </div>
+                <table class="pf">
+                    <tr class="head">
+                        <th class="th1">Course Code</th>
+                        <th class="th2">Course Name</th>
+                        <th class="th3">Credits</th>
+                        <th class="th3">Grade</th>
+                        <th class="th3">Completed</th>
+                    </tr>
+                    {% for i in items_y2 %}
+                    <tr class="content">
+                        <td class="td1">{{items_y2[i]['code']}}</td>
+                        <td class="td2">{{items_y2[i]['coursename']}}</td>
+                        <td class="td3">{{items_y2[i]['credits']}}</td>
+                        <td class="td3"><input type="text" class="grade" onkeypress='return event.charCode >= 51 && event.charCode <= 53 
+                            || event.charCode == 71 || event.charCode == 103
+                            || event.charCode == 85 || event.charCode == 117'></td>
+                        <td class="td3"><input type="checkbox" checked="checked"></td>
+                      </tr>
+                    {% endfor %}
+
+                </table>
+
+                <div class="pf_title">
+                    <h2 class="pf">Study year 3</h2>
+                </div>
+                <table class="pf">
+                    <tr class="head">
+                        <th class="th1">Course Code</th>
+                        <th class="th2">Course Name</th>
+                        <th class="th3">Credits</th>
+                        <th class="th3">Grade</th>
+                        <th class="th3">Completed</th>
+                    </tr>
+                    {% for i in items_y3 %}
+                    <tr class="content">
+                        <td class="td1">{{items_y3[i]['code']}}</td>
+                        <td class="td2">{{items_y3[i]['coursename']}}</td>
+                        <td class="td3">{{items_y3[i]['credits']}}</td>
+                        <td class="td3"><input type="text" class="grade" onkeypress='return event.charCode >= 51 && event.charCode <= 53 
+                            || event.charCode == 71 || event.charCode == 103
+                            || event.charCode == 85 || event.charCode == 117'></td>
+                        <td class="td3"><input type="checkbox" checked="checked"></td>
+                      </tr>
+                    {% endfor %}
+
+                </table>
+
+                <div class="pf_title">
+                    <h2 class="pf">Study year 4-5</h2>
+                </div>
+                <table class="pf">
+                    <tr class="head">
+                        <th class="th1">Course Code</th>
+                        <th class="th2">Course Name</th>
+                        <th class="th3">Credits</th>
+                        <th class="th3">Grade</th>
+                        <th class="th3">Completed</th>
+                    </tr>
+                    {% for i in items_spec %}
+                    <tr class="content">
+                        <td class="td1">{{items_spec[i]['code']}}</td>
+                        <td class="td2">{{items_spec[i]['coursename']}}</td>
+                        <td class="td3">{{items_spec[i]['credits']}}</td>
+                        <td class="td3"><input type="text" class="grade" onkeypress='return event.charCode >= 51 && event.charCode <= 53 
+                            || event.charCode == 71 || event.charCode == 103
+                            || event.charCode == 85 || event.charCode == 117'></td>
+                        <td class="td3"><input type="checkbox"></td>
+                      </tr>
+                    {% endfor %}
+
+                </table>
+
+                
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <ul class=flashes>
@@ -91,10 +170,21 @@ easyplan - stop struggle | Home
                 <button type="submit" class="btnsubmitprgm" name="courses" value="bar">Submit</button>
             </div>
         </div>
-
+        
     </div>
  
+</div>
 
+<div class="footer">
+    <div class="footercontainer">
+        <div class="footerleft">
+
+        </div>
+
+        <div class="footerright">
+        
+        </div>
+    </div>
 </div>
 {% endblock %}
 

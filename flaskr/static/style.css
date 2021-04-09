@@ -10,8 +10,9 @@
 
 /* ---------------------- Code related to the header *---------------------- */
 #header {
+    z-index:2;
     width: 100%;
-    height: 4.44444%;
+    height: 4em;
     display: inline;
     float: left;
     position:fixed;
@@ -34,12 +35,13 @@
 }
 
 #menucontainer {
-    width:50%;
     height:100%;
-    float: left;
+    float: right;
     text-align:right;
     border: none;
     outline: none;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -47,24 +49,25 @@
     width: 5%;
     height: 100%;
     float: left;
-    margin-top:0.333333vh;
+    display: flex;
+    align-items: center;
     margin-left:1vh;
 }
 h1.logotype {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5vh;
+    font-size: 1.4em;
     letter-spacing:0.075vh;
 }
 
 h1.menu {
-    font-size: 1.75vh;
+    font-size: 1em;
 }
 
 /* ---------------------- Code related to content of index *---------------------- */
 
 #container {
     max-width:66.6667%;
-    height:100%;
+    height:150%;
     margin: 0px auto;
 }
 
@@ -73,19 +76,21 @@ h1.menu {
     height: 9%;
     float: left;
     text-align:center;
-    margin-top: 10%;
+    margin-top: 8em;
+    margin-bottom:3em;
 }
+
 
 #programcontainer{
     width:100%;
-    height:50%;
+    height:35em;
     float:left;
     margin-top:5%;
+    overflow:auto;
 }
 
 #explanationfield{
     position:relative;
-    z-index:2;
     width:33.33%;
     height:100%;
     float:left;
@@ -104,7 +109,6 @@ h1.menu {
 
 .explanation_text{
     margin-left:10%;
-    margin-top:3%;
     width:80%;
     height:20%;
     float: left;
@@ -117,6 +121,7 @@ h1.menu {
     float: left;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .icons_for_success div{
@@ -139,7 +144,7 @@ h1.menu {
 
 select {
     width:100%;
-    height:3.25vh;
+    height:3em;
     margin-bottom:2%;
     padding-left:2%;
     float:left;
@@ -150,24 +155,9 @@ select {
     cursor: pointer;
     color:#EAEAEA;
     font-weight:100;
-    font-size:1vh;
+    font-size:0.6em;
   }
 
-  .select--disabled {
-    width:100%;
-    height:3.25vh;
-    margin-bottom:2%;
-    padding-left:2%;
-    float:left;
-    border-radius:5px;
-    background-color: #202020;
-    border: none;
-    outline: none;
-    cursor: not-allowed;
-    color:#949494;
-    font-weight:100;
-    font-size:1vh;
-  }
 
 /* --- The actual program and calculator ----*/
 #programfield{
@@ -176,6 +166,7 @@ select {
     background-color: #e2e2e2;
     border-radius: 0px 10px 10px 0px;
     float:right;
+    overflow:auto;
 }
 
 #programfield_content{
@@ -185,7 +176,6 @@ select {
     margin-left:5%;
     margin-top:5%;
     margin-bottom:5%;
-    overflow:auto;
 }
 
 .pf_title{
@@ -199,6 +189,7 @@ table.pf{
     height: 90%;
     float: left;
     border-collapse: collapse;
+    margin-bottom:1.5em;
 }
 
 td {
@@ -216,31 +207,35 @@ tr.content{
 
 th.th1{
     width:25%;
+    font-weight:100;
+    font-size:0.8em;
 }
 th.th2{
-    width:50%;
+    width:40%;
+    font-weight:100;
+    font-size:0.8em;
 }
 th.th3{
-    width:6.25%;
-    text-align: center;
-}
-th.th4{
-    width:18.75%;
+    width:11.67%;
+    font-weight:100;
+    font-size:0.8em;
     text-align: center;
 }
 
 td.td1{
     width:25%;
+    font-weight:100;
+    font-size:0.7em;
 }
 td.td2{
-    width:50%;
+    width:40%;
+    font-weight:100;
+    font-size:0.7em;
 }
 td.td3{
-    width:6.25%;
-    text-align: center;
-}
-td.td4{
-    width:18.75%;
+    width:11.67%;
+    font-weight:100;
+    font-size:0.7em;
     text-align: center;
 }
 
@@ -249,11 +244,12 @@ td.td4{
     height:10%;
     background-color: #e2e2e2;
     float:right;
+    
 }
 
 .btnsubmitprgm{
     width:15%;
-    height:3.25vh;
+    height:3em;
     float:right;
     border-radius:5px;
     background-color: #202020;
@@ -262,8 +258,32 @@ td.td4{
     cursor: pointer;
     color:#EAEAEA;
     font-weight:100;
-    font-size:1vh;
+    font-size:0.6em;
     margin-right:5%;
+    font-family: Roboto;
+}
+
+.grade{
+    width:3em;
+    border: none;
+    border-radius: 0.1em;
+    background-color:#d1d1d1;
+    color:#202020;
+    text-align: center;
+    font-size: 1em;
+}
+.btnsubmitspec{
+    width:10em;
+    height:3em;
+    float:right;
+    border-radius:5px;
+    background-color: #202020;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:#EAEAEA;
+    font-weight:100;
+    font-size:0.6em;
     font-family: Roboto;
 }
 
@@ -290,6 +310,40 @@ td.td4{
     margin-bottom: 15px;
     margin-left: 52.5px;
     border-radius: 5px;
+}
+
+/* ---------------------- footer ----------------------*/
+
+.footer{
+    display: inline;
+    float: left;
+    width:100%;
+    height:20em;
+    bottom:0;
+    background-color: #202020;
+}
+
+.footercontainer{
+    width: 66.6667%;
+    height: 100%;
+    margin: 0px auto;
+    align-items: center;
+}
+
+.footerleft{
+    width:49%;
+    height:100%;
+    bottom:0;
+    background-color: green;
+    float:left;
+}
+
+.footerright{
+    width:49%;
+    height:100%;
+    bottom:0;
+    background-color: blue;
+    float:right;
 }
 
 
@@ -407,13 +461,13 @@ a:link, a:visited, a:hover, a:active {
 
 /*------ "stop struggle" ----*/
 h2.textboxtitle{
-    font-size:2vh;
+    font-size:2em;
     text-align: center;
     color:#202020;
 }
 
 p.explanation{
-    font-size:1.25vh;
+    font-size:1em;
     text-align:center;
     color:#202020;
 }
@@ -421,7 +475,7 @@ p.explanation{
 /*------ Calculating program ----*/
 h2.expln_title{
     font-weight:100;
-    font-size:1.75vh;
+    font-size:1em;
     text-align: left;
     color:#202020;
     text-decoration: underline;
@@ -432,14 +486,14 @@ h2.expln_title{
 
 p.expln_text{
     font-weight:100;
-    font-size:0.95vh;
+    font-size:0.7em;
     text-align: left;
     color:#202020;
 }
 
 h2.pf{
     font-weight:100;
-    font-size:1.75vh;
+    font-size:1em;
     text-align: left;
     color:#202020;
 }
